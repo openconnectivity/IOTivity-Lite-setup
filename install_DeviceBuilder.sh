@@ -41,7 +41,7 @@ echo "cd DeviceBuilder" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
-echo "cp ./device_output/code/simpleserver.cpp ./iotivity-constrained/apps/device-builder_server.cpp " >> gen.sh
+echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device-builder_server.c " >> gen.sh
 
 
 # create the build script
