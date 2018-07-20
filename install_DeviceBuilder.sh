@@ -41,7 +41,7 @@ echo "cd DeviceBuilder" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
-echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device-builder_server.c " >> gen.sh
+echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device_builder_server.c " >> gen.sh
 
 
 # create the build script
@@ -81,7 +81,7 @@ cd $CURPWD
 echo "making the example directory"
 #mkdir -p ../iotivity/examples/${code_path}
 # add the build file
-#cp ./SConscript ../iotivity/examples/${code_path}/SConscript 
+cp ./environment-changes/Makefile ../iotivity-constrained/port/linux/Makefile
 # add the build dir
 #cp ./SConstruct ../iotivity/.
 
