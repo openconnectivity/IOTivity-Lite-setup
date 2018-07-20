@@ -5,7 +5,7 @@ The scripts setup the next repos (from git) in the folders:
 - iotivity-lite (latest version)
 - DeviceBuilder (latest version)
 
-All repos are being set up 1 level above the folder of IOTivity-setup folder.
+All repos are being set up 1 level above the folder of IOTivity-Lite-setup folder.
 
 Typical folder layout to start from (e.g. create the iot folder in the home folder)
      
@@ -14,7 +14,7 @@ Typical folder layout to start from (e.g. create the iot folder in the home fold
      
 clone in this folder:
 
-```git clone https://github.com/openconnectivity/IOTivity-setup.git```
+```git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git```
      
 This command will give the next folder structure :
      
@@ -26,7 +26,7 @@ From the IOTivity-Lite-setup folder run the scripts (in order):
 - install_DeviceBuilder.sh
 
 
-e.g. exectute in the ~/IOT/IOTivity-setup folder: sh install_<>.sh
+e.g. exectute in the ~/IOT/IOTivity-Lite-setup folder: sh install_<>.sh
 
 Note running:
 
@@ -34,7 +34,7 @@ Note running:
 
 will do the same steps as described above, including the creation of the IOT folder.
 If one wants to see the script:
-```curl  https://openconnectivity.github.io/IOTivity-setup/install.sh ``` or look at
+```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 
 
