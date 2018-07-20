@@ -42,6 +42,7 @@ echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device_builder_server.c " >> gen.sh
+echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-constrained/include/server_introspection.dat.h " >> gen.sh
 
 
 # create the build script
@@ -54,26 +55,20 @@ echo "cd ../../.." >> build.sh
 
 # create the edit script
 echo "#!/bin/bash" > edit_code.sh
-echo "nano ./iotivity-constrained/apps/device-builder_server.cpp" >> edit_code.sh
+echo "nano ./iotivity-constrained/apps/device_builder_server.cpp" >> edit_code.sh
 
 # create the run script
 echo "#!/bin/bash"> run.sh
 echo 'CURPWD=`pwd`'>> run.sh
-#echo 'CURPWD=$(pwd -P)'>> run.sh
-echo "env LD_LIBRARY_PATH=${CURPWD}/mraa/build/src" >> run.sh
-echo "sudo ldconfig" >> run.sh
-echo "cd ./iotivity/out/linux/${ARCH}/release/examples/${code_path}" >> run.sh
+echo "cd ./iotivity-constrained/port/linux" >> run.sh
 echo "pwd" >> run.sh
 echo "ls" >> run.sh
-echo "./server" >> run.sh
+echo "./device_builder_server" >> run.sh
 echo 'cd $CURPWD' >> run.sh
 
 # create the reset script
 echo "#!/bin/bash"> reset.sh
-echo "mkdir -p ./iotivity/out/linux/${ARCH}/release/examples/${code_path} >/dev/null 2>&1" >> reset.sh
-echo "rm -f ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_security.dat" >> reset.sh
-echo "#cp ./device_output/code/server_security.dat ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_security.dat" >> reset.sh
-echo "cp ./iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server_justworks.dat ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_security.dat" >> reset.sh
+echo "rm -f ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
 
 
 cd $CURPWD
@@ -82,9 +77,6 @@ echo "making the example directory"
 #mkdir -p ../iotivity/examples/${code_path}
 # add the build file
 cp ./environment-changes/Makefile ../iotivity-constrained/port/linux/Makefile
-# add the build dir
-#cp ./SConstruct ../iotivity/.
-
 
 
 chmod a+x ../*.sh
