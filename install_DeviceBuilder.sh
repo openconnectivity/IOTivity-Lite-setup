@@ -41,25 +41,12 @@ echo "cd DeviceBuilder" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
-echo "cp ./device_output/code/server.cpp ./iotivity/examples/${code_path}/server.cpp " >> gen.sh
-echo "# making executable folder"  >> gen.sh
-echo "mkdir -p ./iotivity/out/linux/${ARCH}/release/examples/${code_path} >/dev/null 2>&1" >> gen.sh
-echo "# copying the introspection file to the executable folder" >> gen.sh
-echo "cp ./device_output/code/server_introspection.dat ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_introspection.dat" >> gen.sh
-echo "# quick fix: using the iotivity supplied oic_svr_db_server_justworks.dat file" >> gen.sh
-# working copy line of clarke
-# copying the file so that reset.sh works
-#cp  ~/iot/iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server_justworks.dat ~/iot/device_output/code/server_security.dat
-echo "cp ./iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server_justworks.dat     ./device_output/code/server_security.dat"
-# working copy line from clarke :
-#  cp ~/IOT/iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server_justworks.dat ~/IOT/iotivity/out/linux/armv7l/release/examples/OCFDeviceBuilder/server_security.dat
-echo "cp ./iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server_justworks.dat     ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_security.dat" >> gen.sh
-#echo "cp ./device_output/code/server_security.dat  ./iotivity/out/linux/${ARCH}/release/examples/${code_path}/server_security.dat" >> gen.sh
+echo "cp ./device_output/code/simpleserver.cpp ./iotivity-constrained/apps/device-builder_server.cpp " >> gen.sh
 
 
 # create the build script
 echo "#!/bin/bash" > build.sh
-echo "cd iotivity" >> build.sh
+echo "cd iotivity-constrained" >> build.sh
 echo "#uncomment next line for building without security" >> build.sh
 echo "#scons examples/${code_path} SECURED=0" >> build.sh
 echo "scons examples/${code_path}" >> build.sh
@@ -67,7 +54,7 @@ echo "cd .." >> build.sh
 
 # create the edit script
 echo "#!/bin/bash" > edit_code.sh
-echo "nano ./iotivity/examples/${code_path}/server.cpp" >> edit_code.sh
+echo "nano ./iotivity-constrained/apps/device-builder_server.cpp" >> edit_code.sh
 
 # create the run script
 echo "#!/bin/bash"> run.sh
@@ -92,11 +79,11 @@ echo "cp ./iotivity/resource/csdk/security/provisioning/sample/oic_svr_db_server
 cd $CURPWD
 
 echo "making the example directory"
-mkdir -p ../iotivity/examples/${code_path}
+#mkdir -p ../iotivity/examples/${code_path}
 # add the build file
-cp ./SConscript ../iotivity/examples/${code_path}/SConscript 
+#cp ./SConscript ../iotivity/examples/${code_path}/SConscript 
 # add the build dir
-cp ./SConstruct ../iotivity/.
+#cp ./SConstruct ../iotivity/.
 
 
 
