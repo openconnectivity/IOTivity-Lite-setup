@@ -34,21 +34,11 @@ git clone https://github.com/openconnectivityfoundation/DeviceBuilder.git
 # get the initial example 
 cp DeviceBuilder/DeviceBuilderInputFormat-file-examples/input-lightdevice.json example.json
 
-# clone the iotivity cbor conversion tool 
-git clone https://github.com/alshafi/iotivity-tool.git
-# install the python libraries that are needed for iotivity-tool
-cd iotivity-tool
-pip3 install -U -r requirements.txt
-
-# create the initial security file and place it in the code directory.
-cd $CURPWD
-sh svr2cbor.sh tocbor
-cd ..
 
 # create the generation script
 echo "#!/bin/bash" > gen.sh
 echo "cd DeviceBuilder" >> gen.sh
-echo "sh ./DeviceBuilder_C++IotivityServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
+echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
 echo "cp ./device_output/code/server.cpp ./iotivity/examples/${code_path}/server.cpp " >> gen.sh
