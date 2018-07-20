@@ -55,7 +55,7 @@ echo "cd ../../.." >> build.sh
 
 # create the edit script
 echo "#!/bin/bash" > edit_code.sh
-echo "nano ./iotivity-constrained/apps/device_builder_server.cpp" >> edit_code.sh
+echo "nano ./iotivity-constrained/apps/device_builder_server.c" >> edit_code.sh
 
 # create the run script
 echo "#!/bin/bash"> run.sh
