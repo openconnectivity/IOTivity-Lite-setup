@@ -224,7 +224,7 @@ temp_sensor: libiotivity-constrained-client.a
 
 device_builder_server: libiotivity-constrained-server.a
 	@mkdir -p $@_creds
-	${CC} -o $@ ../../apps/device-builder_server.c libiotivity-constrained-server.a -DOC_SERVER ${CFLAGS}  ${LIBS}
+	${CC} -o $@ ../../apps/device_builder_server.c libiotivity-constrained-server.a -DOC_SERVER ${CFLAGS}  ${LIBS}
     
 simpleserver: libiotivity-constrained-server.a
 	@mkdir -p $@_creds
