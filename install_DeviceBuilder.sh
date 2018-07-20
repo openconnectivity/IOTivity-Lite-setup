@@ -46,11 +46,11 @@ echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device_
 
 # create the build script
 echo "#!/bin/bash" > build.sh
-echo "cd iotivity-constrained" >> build.sh
+echo "cd iotivity-constrained/port/linux" >> build.sh
 echo "#uncomment next line for building without security" >> build.sh
 echo "#scons examples/${code_path} SECURED=0" >> build.sh
-echo "scons examples/${code_path}" >> build.sh
-echo "cd .." >> build.sh
+echo "make device_builder_server" >> build.sh
+echo "cd ../../.." >> build.sh
 
 # create the edit script
 echo "#!/bin/bash" > edit_code.sh
