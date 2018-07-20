@@ -27,8 +27,8 @@ sudo apt-get -y update
 # make sure that git is there, because the scripts are using git.
 sudo apt-get -y install git 
 
+#install_IOTivity-lite.sh
 git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git
 cd IOTivity-Lite-setup
-sh install_IOTivity_lite.sh
+sh install_IOTivity-lite.sh
 sh install_DeviceBuilder.sh
-#sh install_MRAA.sh
