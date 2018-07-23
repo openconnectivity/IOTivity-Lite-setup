@@ -22,8 +22,9 @@ curpwd=`pwd`
 cd ..
 
 # step 1
-sudo apt-get -y install build-essential git  libtool \
-autoconf valgrind doxygen wget unzip cmake uuid-dev \
+sudo apt-get -y install build-essential git libtool \
+autoconf valgrind doxygen wget unzip cmake libboost-dev \
+libboost-program-options-dev libboost-thread-dev uuid-dev \
 libexpat1-dev libglib2.0-dev libsqlite3-dev libcurl4-gnutls-dev
 
 # step 2
