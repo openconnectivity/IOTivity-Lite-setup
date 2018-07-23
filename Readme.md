@@ -48,8 +48,8 @@ Folder structure after everything is installed and code is generated:
         |         |-- code   The generated code.
         |               |    the files will be copied to folder iotivity/examples/OCFDeviceBuilder
         |               |- server.cpp
-        |               |- server_security.dat       SVR data
-        |               |- server_introspection.dat  introspection device data
+        |               |- server_security.dat         SVR data
+        |               |- server_introspection.dat.h  introspection device data, encoded in header file
         |
         |-- iotivity-lite         IOTivity source code
         |        | 
@@ -59,15 +59,15 @@ Folder structure after everything is installed and code is generated:
         |        |-- include
         |               |- server_introspection.dat.h   <--- generated introspection data
         |                   
-        |-- IOTDataModels    oneIOTa resource definitions (in swagger)
-        |-- IOTivity-Lite-setup   This repo.
+        |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
+        |-- IOTivity-Lite-setup   This github repo.
         |-- swagger2x        swagger2x code generation
         |- gen.sh            generation command to convert the example.json in to code
         |- build.sh          building the generated code
         |- run.sh            run the generated code
         |- reset.sh          reset the device to ready for onboarding state.
         |- edit_code.sh      edits the iotivity/examples/OCFDeviceBuilder/server.cpp file with nano.
-        |- example.json      the input for device builder.
+        |- example.json      the input for device builder scripts.
             
             
      legenda:  folder
@@ -88,7 +88,7 @@ referenced information:
 | DeviceBuilder |  tool chain  | https://github.com/openconnectivityfoundation/DeviceBuilder |
 | swagger2x |  code generation  | https://github.com/openconnectivityfoundation/swagger2x |
 | IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
-| IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/OpenInterConnect/IoTDataModels |
+| IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
 
     
