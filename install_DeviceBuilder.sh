@@ -68,7 +68,7 @@ echo 'cd $CURPWD' >> run.sh
 
 # create the reset script
 echo "#!/bin/bash"> reset.sh
-echo "rm -f ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
+echo "rm -rf ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
 
 
 cd $CURPWD
