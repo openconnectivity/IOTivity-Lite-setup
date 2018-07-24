@@ -48,9 +48,9 @@ echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-constrained/
 # create the build script
 echo "#!/bin/bash" > build.sh
 echo "cd iotivity-constrained/port/linux" >> build.sh
-echo "#uncomment next line for building without security" >> build.sh
-echo "#scons examples/${code_path} SECURED=0" >> build.sh
-echo "make device_builder_server" >> build.sh
+echo "#uncomment next line for building the debug version" >> build.sh
+echo "#make DYNAMIC=1 DEBUG=1 device_builder_server" >> build.sh
+echo "make DYNAMIC=1 device_builder_server" >> build.sh
 echo "cd ../../.." >> build.sh
 
 # create the edit script
