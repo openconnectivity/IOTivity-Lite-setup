@@ -25,7 +25,8 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y update
 # make sure that git is there, because the scripts are using git.
-sudo apt-get -y install git 
+# nano and automake are needed for artik boards
+sudo apt-get -y install git nano automake 
 
 #install_IOTivity-lite.sh
 git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git
