@@ -7,7 +7,7 @@ The scripts setup the next repos (from git) in the folders:
 
 All repos are being set up 1 level above the folder of IOTivity-Lite-setup folder.
 
-Typical folder layout to start from (e.g. create the iot folder in the home folder)
+Typical folder layout to start from (e.g. create the iot-lite folder in the home folder)
      
      
      ~/iot-lite
@@ -26,7 +26,7 @@ From the IOTivity-Lite-setup folder run the scripts (in order):
 - install_DeviceBuilder.sh
 
 
-e.g. exectute in the ~/IOT/IOTivity-Lite-setup folder: sh install_<>.sh
+e.g. exectute in the <>/iot-lite/IOTivity-Lite-setup folder: sh install_<>.sh
 
 Note running:
 
@@ -40,7 +40,7 @@ https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 
 Folder structure after everything is installed and code is generated:
     
-    ~/iot        
+    ~/iot-lite        
         |-- core             core resource definitions (in swagger) 
         |-- DeviceBuilder    The device builder tool chain
         |-- device_output    The output of device builder.
