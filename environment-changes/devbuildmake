@@ -13,8 +13,8 @@ include Makefile
 
 
 #
-# additional target for device_builder executable.
+# additional target for device_builder_server executable.
 #
-device_builder: libiotivity-constrained-server.a ../../apps/device_builder_server.c
+device_builder_server: libiotivity-constrained-server.a ../../apps/device_builder_server.c
 	@mkdir -p $@_creds
 	${CC} -o $@ ../../apps/device_builder_server.c libiotivity-constrained-server.a -DOC_SERVER ${CFLAGS}  ${LIBS}
