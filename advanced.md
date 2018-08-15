@@ -1,6 +1,36 @@
 # Advanced usage
 Scripts that are intended for usage after initial setup.
 
+# manual steps for setting up the build environment
+
+
+This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
+The script setup the next repos (from git) in the folders:
+- iotivity-lite (latest version)
+- DeviceBuilder (latest version)
+
+Typical folder layout to start from (e.g. create the iot-lite folder in the home folder)
+     
+     
+     ~/iot-lite
+     
+clone in this folder:
+
+```git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git```
+     
+This command will give the next folder structure :
+     
+     ~/iot-lite
+        |-IOTivity-Lite-setup 
+    
+From the IOTivity-Lite-setup folder run the scripts (in order):
+- install_IOTivity-lite.sh
+- install_DeviceBuilder.sh
+
+
+e.g. exectute in the <>/iot-lite/IOTivity-Lite-setup folder: sh install_<>.sh
+
+
 # update_repos.sh
 The update_repos.sh script updates the: 
 - tooling repos

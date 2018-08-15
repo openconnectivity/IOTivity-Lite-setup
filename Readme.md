@@ -1,38 +1,15 @@
 # IOTivity-lite setup
 
 This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
-The scripts setup the next repos (from git) in the folders:
+The script setup the next repos (from git) in the folders:
 - iotivity-lite (latest version)
 - DeviceBuilder (latest version)
-
-All repos are being set up 1 level above the folder of IOTivity-Lite-setup folder.
-
-Typical folder layout to start from (e.g. create the iot-lite folder in the home folder)
-     
-     
-     ~/iot-lite
-     
-clone in this folder:
-
-```git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git```
-     
-This command will give the next folder structure :
-     
-     ~/iot-lite
-        |-IOTivity-Lite-setup 
-    
-From the IOTivity-Lite-setup folder run the scripts (in order):
-- install_IOTivity-lite.sh
-- install_DeviceBuilder.sh
-
-
-e.g. exectute in the <>/iot-lite/IOTivity-Lite-setup folder: sh install_<>.sh
-
-Note running:
+The curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
-will do the same steps as described above, including the creation of the IOT folder.
+sets up the full environment (for linux).
+
 If one wants to see the script:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
@@ -66,7 +43,8 @@ Folder structure after everything is installed and code is generated:
         |- build.sh          building the generated code
         |- run.sh            run the generated code
         |- reset.sh          reset the device to ready for onboarding state.
-        |- edit_code.sh      edits the iotivity/examples/OCFDeviceBuilder/server.cpp file with nano.
+        |- edit_code.sh      edits the iotivity-lite/apps/device_builder_server.cpp file with nano.
+        |- edit_input.sh     edits the example.json file with nano.
         |- example.json      the input for device builder scripts.
             
             
@@ -90,20 +68,24 @@ referenced information:
 | IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
-
     
-
     
 # development flow  
 
 The development flow is depicted the figure below:
 
                    start
+               --------------                  
+              |              |     
+              | edit_input.sh|             --- edit the input file for the code generation
+              |              |        
+               -------------- 
                      |
+                     |       
                      v
                --------------
               |              |
-              |    gen.sh    |
+              |    gen.sh    |             ---  generates the code & introspection file
               |              |
                --------------
                      |
@@ -111,7 +93,7 @@ The development flow is depicted the figure below:
                      v                     --- introspection header files
                --------------                  
               |              |     
-              | edit_code.sh |<--------
+              | edit_code.sh |<--------    --- edit the generated code
               |              |         |
                --------------          |
                      |                 |
@@ -119,7 +101,7 @@ The development flow is depicted the figure below:
                      v                 |
                --------------          |
               |              |  build  |
-              |   build.sh   |---->----|
+              |   build.sh   |---->----|   --- build the executable
               |              |  failed |
                --------------          |
                      |                 |
@@ -137,6 +119,24 @@ The development flow is depicted the figure below:
         Note: if gen.sh is run again, the generated code is overwritten.
         e.g. before running that tool again, safe the file in the iotivivty tree to another name 
         if one wants to keep that code as reference
+
+    
+
+## edit_input.sh
+This scripts edits the device builder input file with nano.
+
+### Nano
+Nano is supplied on various linux systems like ubuntu and pi.
+The file being edited is the file in iotivity tree.
+so please make sure when generating a new version, that a changed file is saved under a different name.
+
+nano beginners guide:
+
+https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
+
+### input file
+Device Builder input file information can be found at:
+https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
 
     
 ## gen.sh
@@ -157,20 +157,20 @@ the next mechanisms are available to change the device type:
 
 Running this script generates the device_output folder AND copies the result to the correct executable folder in the iotivity-lite tree structure.
 
+more info of the DeviceBuilder script can be found at:
+https://github.com/openconnectivityfoundation/DeviceBuilder
+
 
 ## edit_code.sh
-This scripts edits the code with nano.
-Nano is supplied on various linux systems like ubuntu and pi.
-The file being edited is the file in iotivity tree.
-so please make sure when generating a new version, that a changed file is saved under a different name.
-
-nano beginners guide:
-
-https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
+This scripts edits the generated C code with nano.
+Note that running gen.sh will overwrite the made changes!!
 
 ## build.sh
 This script builds the app device_builder_server.c by means of make.
-e.g. run in the iotivity-lite/port/linux folder the ```make  device_builder_server``` command
+e.g. run in the iotivity-lite/port/linux folder the ```make -f devbuildmake device_builder_server``` command
+
+To build another port (e.g. OS):
+- uncomment out the listed port in the script, and comment out the default linux.
 
 ## run.sh
 This script executes the executable in the folder where the executable resides in.
@@ -179,13 +179,13 @@ e.g. executes in folder:
 
 ./iotivity-lite/port/linux/
 
-the device_builder_server executable
+the device_builder_server executable.
 
 note that the executable needs to be started in folder where it recides to avoid issues with reading the security data.
 
 
 # reset.sh
-This script overwrites the SVR settings in the security folder 
+This script deletes the SVR settings in the security folder:
 
 ./iotivity/port/linux/device_builder_server_creds
 
