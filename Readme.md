@@ -88,7 +88,7 @@ The development flow is depicted the figure below:
                --------------
               |              |
               |    gen.sh    |             ---  generates the code & introspection file
-              |              |               - script contains the device type, 
+              |              |             --- script contains the device type, 
                --------------                  change the argument to change the device type.
                      |
                      | initial code        --- in iotivity-lite tree, to build
