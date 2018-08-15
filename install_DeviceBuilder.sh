@@ -90,8 +90,8 @@ cd $CURPWD
 echo "making the example directory"
 #mkdir -p ../iotivity/examples/${code_path}
 # add the build file
-for d in ../iotivity-constrained/port/ ; do
-    cp ./environment-changes/devbuildmake $d/devbuildmake
+for d in ../iotivity-constrained/port/*/ ; do
+    cp ./environment-changes/devbuildmake ${d}devbuildmake
 done
 
 
