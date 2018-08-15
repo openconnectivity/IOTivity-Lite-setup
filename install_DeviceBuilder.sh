@@ -47,20 +47,31 @@ echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-constrained/
 
 # create the build script
 echo "#!/bin/bash" > build.sh
-echo "cd iotivity-constrained/port/linux" >> build.sh
+echo "cd iotivity-constrained/port/linux/" >> build.sh
+echo "#comment out one of the next lines to build another port" >> build.sh
+for d in ./iotivity-constrained/port/*/ ; do
+    echo "#cd $d" >> build.sh
+done
 echo "#uncomment next line for building the debug version" >> build.sh
-echo "#make DYNAMIC=1 DEBUG=1 device_builder_server" >> build.sh
-echo "make DYNAMIC=1 device_builder_server" >> build.sh
+echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server" >> build.sh
+echo "make -f devbuildmake DYNAMIC=1 device_builder_server" >> build.sh
 echo "cd ../../.." >> build.sh
 
-# create the edit script
+# create the edit code script
 echo "#!/bin/bash" > edit_code.sh
 echo "nano ./iotivity-constrained/apps/device_builder_server.c" >> edit_code.sh
+
+# create the edit input script
+echo "#!/bin/bash" > edit_input.sh
+echo "nano ./example.json" >> edit_input.sh
 
 # create the run script
 echo "#!/bin/bash"> run.sh
 echo 'CURPWD=`pwd`'>> run.sh
-echo "cd ./iotivity-constrained/port/linux" >> run.sh
+echo "cd ./iotivity-constrained/port/linux/" >> run.sh
+for d in ./iotivity-constrained/port/*/ ; do
+    echo "#cd $d" >> run.sh
+done
 echo "pwd" >> run.sh
 echo "ls" >> run.sh
 echo "./device_builder_server" >> run.sh
@@ -68,7 +79,10 @@ echo 'cd $CURPWD' >> run.sh
 
 # create the reset script
 echo "#!/bin/bash"> reset.sh
-echo "rm -rf ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
+for d in ./iotivity-constrained/port/*/ ; do
+    echo "rm -rf ${d}device_builder_server_creds" >> reset.sh
+done
+#echo "rm -rf ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
 
 
 cd $CURPWD
@@ -76,7 +90,9 @@ cd $CURPWD
 echo "making the example directory"
 #mkdir -p ../iotivity/examples/${code_path}
 # add the build file
-cp ./environment-changes/Makefile ../iotivity-constrained/port/linux/Makefile
+for d in ../iotivity-constrained/port/ ; do
+    cp ./environment-changes/devbuildmake $d/devbuildmake
+done
 
 
 chmod a+x ../*.sh
