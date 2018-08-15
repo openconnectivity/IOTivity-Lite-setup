@@ -31,10 +31,16 @@ Folder structure after everything is installed and code is generated:
         |-- iotivity-lite         IOTivity source code
         |        | 
         |        |-- apps
-        |        |      |- device_builder_server.c      <--- generated code
+        |        |      |- device_builder_server.c            <--- generated code
         |        |
         |        |-- include
-        |               |- server_introspection.dat.h   <--- generated introspection data
+        |        |      |- server_introspection.dat.h         <--- generated introspection data
+        |        |
+        |        |-- port/<portinglayer>
+        |                     |- device_builder_server        <--- executable (after creation on linux)
+        |                     |- devbuildmake                 <--- makefile with the target
+        |                     |- Makefile                     <--- original make file from IOTivity_lite
+        |                     |- device_builder_server_creds  <--- SVR storage, when it is not there, it is ready for onboarding
         |                   
         |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
         |-- IOTivity-Lite-setup   This github repo.
