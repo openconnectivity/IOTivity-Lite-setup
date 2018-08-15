@@ -1,0 +1,20 @@
+# top make file to build the generated device_builder_server.c
+# to be used as top make file when calling make
+# make -f devbuildmake <targets>
+include Makefile
+
+# typical addition of CFLAGS
+#
+#CFLAGS += `pkg-config --cflags python`
+
+# typical addition of LIBS
+#
+#LIBS += `-lmylib`
+
+
+#
+# additional target for device_builder executable.
+#
+device_builder: libiotivity-constrained-server.a ../../apps/device_builder_server.c
+	@mkdir -p $@_creds
+	${CC} -o $@ ../../apps/device_builder_server.c libiotivity-constrained-server.a -DOC_SERVER ${CFLAGS}  ${LIBS}
