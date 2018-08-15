@@ -75,10 +75,12 @@ referenced information:
 The development flow is depicted the figure below:
 
                    start
+                     |       
+                     v
                --------------                  
               |              |     
               | edit_input.sh|             --- edit the input file for the code generation
-              |              |        
+              |              |                 default file contains the binary switch resource
                -------------- 
                      |
                      |       
@@ -86,8 +88,8 @@ The development flow is depicted the figure below:
                --------------
               |              |
               |    gen.sh    |             ---  generates the code & introspection file
-              |              |
-               --------------
+              |              |               - script contains the device type, 
+               --------------                  change the argument to change the device type.
                      |
                      | initial code        --- in iotivity-lite tree, to build
                      v                     --- introspection header files
