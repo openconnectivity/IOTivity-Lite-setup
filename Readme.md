@@ -129,11 +129,25 @@ The development flow is depicted the figure below:
         e.g. before running that tool again, safe the file in the iotivivty tree to another name 
         if one wants to keep that code as reference
 
+
+# Initial Flow
+
+The Initial flow is doing a generation (with the supplied example):
+- gen.sh
+	generate the code
+- build.sh
+	build the code
+- run.sh
+	run (launch) the code
+
+
 ### OCF clients    
     
 Information and Installers about the OCF clients for development support can be found at:
 
 https://github.com/openconnectivityfoundation/development-support
+
+# scripts
 
 ## edit_input.sh
 This scripts edits the device builder input file with nano.
@@ -197,7 +211,7 @@ the device_builder_server executable.
 note that the executable needs to be started in folder where it recides to avoid issues with reading the security data.
 
 
-# reset.sh
+## reset.sh
 This script deletes the SVR settings in the security folder:
 
 ./iotivity/port/linux/device_builder_server_creds
