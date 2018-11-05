@@ -209,13 +209,15 @@ Running this script generates the device_output folder AND copies the result to 
 more info of the DeviceBuilder script can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder
 
+**Note that running gen.sh will overwrite the made code changes!!**
 
 ## edit code
 
 script: **edit_code.sh**
 
 This scripts edits the generated C code with [Nano](#nano).
-Note that running gen.sh will overwrite the made changes!!
+
+**Note that running gen.sh will overwrite the made changes!!**
 
 ## build code
 
