@@ -133,11 +133,14 @@ The development flow is depicted the figure below:
 # Initial Flow
 
 The Initial flow is doing a generation (with the supplied example):
-- gen.sh
+1. gen.sh
+	
 	generate the code
-- build.sh
+2. build.sh
+	
 	build the code
-- run.sh
+3. run.sh
+	
 	run (launch) the code
 
 
