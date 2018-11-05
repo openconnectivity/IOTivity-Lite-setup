@@ -74,6 +74,7 @@ referenced information:
 | IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
+| OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
     
     
 # development flow  
@@ -130,7 +131,7 @@ The development flow is depicted the figure below:
 
 ### OCF clients    
     
-information about the clients for development support can be found at:
+Information and Installers about the OCF clients for development support can be found at:
 
 https://github.com/openconnectivityfoundation/development-support
 
