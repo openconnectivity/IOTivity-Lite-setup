@@ -133,7 +133,7 @@ The development flow is depicted the figure below:
 # Initial Flow
 
 The Initial flow is doing a generation (with the supplied example):
-1. [gen.sh](#gen.sh)
+1. [gen.sh](#gen)
 	
 	generate the code
 2. build.sh
@@ -185,7 +185,10 @@ Device Builder input file information can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
 
     
-## gen.sh
+## gen
+
+gen.sh
+
 This script runs the DeviceBuilder with the arguments:
 - iot-lite/example.json as input file
 - light device as device type
