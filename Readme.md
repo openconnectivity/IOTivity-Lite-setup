@@ -133,31 +133,31 @@ The development flow is depicted the figure below:
 # Initial Flow
 
 The Initial flow is doing a generation (with the supplied example):
-1. [gen.sh](#gen)
+1. [gen.sh](#generate-code)
 	
 	generate the code
-2. build.sh
+2. [build.sh](#build-code)
 	
 	build the code
-3. run.sh
+3. [run.sh](#run-code)
 	
 	run (launch) the code
 
 # Repeat Flow
 The repeat flow is doing (without code generation):
 
-1. edit_code.sh
+1. [edit_code.sh](#edit-code)
 	
 	edit the generated code with Nano
-2. build.sh
+2. [build.sh](#build-code)
 
 	build the code
-3. run.sh
+3. [run.sh](#run-code)
 	
 	run (launch) the code
 	
 	
-if the Onboarding step needs to be 
+if the device needs to be in ready for onboarding, then run the script [reset.sh](#reset-device)
 
 
 ### OCF clients    
@@ -185,9 +185,9 @@ Device Builder input file information can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
 
     
-## gen
+## generate code
 
-gen.sh
+script: **gen.sh**
 
 This script runs the DeviceBuilder with the arguments:
 - iot-lite/example.json as input file
@@ -210,18 +210,27 @@ more info of the DeviceBuilder script can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder
 
 
-## edit_code.sh
+## edit code
+
+script: **edit_code.sh**
+
 This scripts edits the generated C code with nano.
 Note that running gen.sh will overwrite the made changes!!
 
-## build.sh
+## build code
+
+script: **build.sh**
+
 This script builds the app device_builder_server.c by means of make.
 e.g. run in the iotivity-lite/port/linux folder the ```make -f devbuildmake device_builder_server``` command
 
 To build another port (e.g. OS):
 - uncomment out the listed port in the script, and comment out the default linux.
 
-## run.sh
+## run code
+
+script: **run.sh**
+
 This script executes the executable in the folder where the executable resides in.
 
 e.g. executes in folder:
@@ -233,7 +242,10 @@ the device_builder_server executable.
 note that the executable needs to be started in folder where it recides to avoid issues with reading the security data.
 
 
-## reset.sh
+## reset device
+
+script: **reset.sh**
+
 This script deletes the SVR settings in the security folder:
 
 ./iotivity/port/linux/device_builder_server_creds
