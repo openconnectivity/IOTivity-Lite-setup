@@ -133,7 +133,7 @@ The development flow is depicted the figure below:
 # Initial Flow
 
 The Initial flow is doing a generation (with the supplied example):
-1. gen.sh
+1. [gen.sh](#gen.sh)
 	
 	generate the code
 2. build.sh
@@ -142,6 +142,22 @@ The Initial flow is doing a generation (with the supplied example):
 3. run.sh
 	
 	run (launch) the code
+
+# Repeat Flow
+The repeat flow is doing (without code generation):
+
+1. edit_code.sh
+	
+	edit the generated code with Nano
+2. build.sh
+
+	build the code
+3. run.sh
+	
+	run (launch) the code
+	
+	
+if the Onboarding step needs to be 
 
 
 ### OCF clients    
