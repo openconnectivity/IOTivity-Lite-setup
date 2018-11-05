@@ -214,7 +214,7 @@ https://github.com/openconnectivityfoundation/DeviceBuilder
 
 script: **edit_code.sh**
 
-This scripts edits the generated C code with nano.
+This scripts edits the generated C code with [Nano](#nano).
 Note that running gen.sh will overwrite the made changes!!
 
 ## build code
