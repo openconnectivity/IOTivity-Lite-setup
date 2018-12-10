@@ -32,9 +32,8 @@ libexpat1-dev libglib2.0-dev libsqlite3-dev libcurl4-gnutls-dev
 git clone https://github.com/iotivity/iotivity-constrained.git
 #mv -f iotivity-constrained iotivity-lite
 
-#cd iotivity
-#git checkout 1.3-rel
-
+cd iotivity-constrained
+git checkout GETTING_STARTED_0
 
 
 cd $curpwd
