@@ -42,6 +42,13 @@ echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output
 echo "cd .." >> gen.sh
 echo "# copying source code to compile location" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/device_builder_server.c " >> gen.sh
+echo "if [ ! -f ./iotivity-constrained/apps/simpleserver_windows.c_org ]; then" >> gen.sh
+echo "  # keep the original file for the windows solution, but do this only once" >> gen.sh
+echo "  cp ./iotivity-constrained/apps/simpleserver_windows.c ./iotivity-constrained/apps/simpleserver_windows.c_org" >> gen.sh
+echo "fi" >> gen.sh
+echo "# copy over the file of the windows solution" >> gen.sh
+echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/simpleserver_windows.c" >> gen.sh
+echo "# copy over the IDD file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-constrained/include/server_introspection.dat.h " >> gen.sh
 
 
