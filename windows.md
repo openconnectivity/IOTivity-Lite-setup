@@ -1,6 +1,8 @@
 # IOTivity-lite on windows
 
 
+Installation of IOTivity-Lite as indicated in Readme.md
+
 Folder structure after everything is installed and code is generated:
     
     ~/iot-lite        
@@ -98,4 +100,7 @@ The Initial flow is doing a generation (with the supplied example):
 6. tab -> Debug -> Start Debugging
    
 
-	
+# visual studio
+See microsoft to install visual studion on your windows machine at:
+
+https://visualstudio.microsoft.com/vs/community/
