@@ -8,7 +8,7 @@ The curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
-sets up the full environment (for linux).
+sets up the full environment (for linux and windows).
 
 If one wants to see the script:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
@@ -77,7 +77,7 @@ referenced information:
 | OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
     
     
-# development flow  
+# development flow on linux 
 
 The development flow is depicted the figure below:
 
@@ -254,3 +254,7 @@ This script deletes the SVR settings in the security folder:
 
 The device will go to the ready for onboarding state.
 
+
+#  windows specific instructions
+instructions see :
+https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md
