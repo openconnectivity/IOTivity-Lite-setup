@@ -33,7 +33,12 @@ git clone https://github.com/iotivity/iotivity-constrained.git
 #mv -f iotivity-constrained iotivity-lite
 
 cd iotivity-constrained
-git checkout GETTING_STARTED_0
-
+if [ -z "$1" ]
+then
+  echo "checking out $1"
+  git checkout $1
+else
+  echo "iotivity-lite: master"
+fi
 
 cd $curpwd

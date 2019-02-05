@@ -31,5 +31,5 @@ sudo apt-get -y install git nano automake
 #install_IOTivity-lite.sh
 git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git
 cd IOTivity-Lite-setup
-sh install_IOTivity-lite.sh GETTING_STARTED_0
+sh install_IOTivity-lite.sh 
 sh install_DeviceBuilder.sh
