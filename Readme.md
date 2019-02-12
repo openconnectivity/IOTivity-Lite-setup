@@ -171,7 +171,7 @@ The development flow is depicted the figure below:
 
 # Initial Flow
 
-The Initial flow is doing a generation (with the supplied example):
+The Initial flow is performing code generation (with the supplied example):
 1. [gen.sh](#generate-code)
 	
 	script to generate the code that represents the device.
@@ -183,7 +183,7 @@ The Initial flow is doing a generation (with the supplied example):
 	script to run (launch/start) the compiled (generated) code.
 
 # Repeat Flow
-The repeat flow is doing (without code generation):
+The repeat flow is modifying the generated code (without code generation):
 
 1. [edit_code.sh](#edit-code)
 	
@@ -196,7 +196,8 @@ The repeat flow is doing (without code generation):
 	script to run (launch/start) the compiled (generated) code.
 	
 	
-if the device needs to be in ready for onboarding, then run the script [reset.sh](#reset-device)
+If the device needs to be in ready for onboarding (for example after a crash), 
+then run the script [reset.sh](#reset-device)
 
 
 ### OCF clients    
@@ -205,7 +206,7 @@ Information and Installers about the OCF clients for development support can be 
 
 https://github.com/openconnectivityfoundation/development-support
 
-# scripts
+# Scripts
 
 ## edit_input.sh
 This scripts edits the device builder input file with Nano.
@@ -225,16 +226,17 @@ Device Builder input file information can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
 
     
-## generate code
+## Generate Code
 
 script: **gen.sh**
 
-This script runs the DeviceBuilder with the arguments:
+This script runs the DeviceBuilder application with the predefined arguments:
 - iot-lite/example.json as input file
 - light device as device type
 
-when the device type needs to change from oic.d.light to something else
-the next mechanisms are available to change the device type:
+### changing the device type of the OCF Server
+The device type can be change from oic.d.light (default) to something different. 
+The following mechanisms are available to change the device type:
 - change the server code from oic.d.light to the specific value
 	- search for oic.d.light in the server code, and change the value.
 	- no need to re-generate the server code
@@ -251,15 +253,17 @@ https://github.com/openconnectivityfoundation/DeviceBuilder
 
 **Note that running gen.sh will overwrite the made code changes!!**
 
-## edit code
+## Edit Code
 
 script: **edit_code.sh**
 
-This scripts edits the generated C code with [Nano](#nano).
+This scripts edits the generated C code __device_builder_server.c__ with [Nano](#nano).
+The script is starting the Nano editor with the generated code in the IOTivity tree.
+The saved file can be compiled without copy pasting.
 
 **Note that running gen.sh will overwrite the made changes!!**
 
-## build code
+## Build Code
 
 script: **build.sh**
 
@@ -269,20 +273,20 @@ e.g. run in the iotivity-lite/port/linux folder the ```make -f devbuildmake devi
 To build another port (e.g. OS):
 - uncomment out the listed port in the script, and comment out the default linux.
 
-## run code
+## Run Code
 
 script: **run.sh**
 
-This script executes the executable in the folder where the executable resides in.
+This script executes the compiled executable in the folder where the executable resides in.
 
-e.g. it executes the device_builder_server executable (e.g. the server application) in folder:
+e.g. it executes the __device_builder_server__ executable (e.g. the server application) in folder:
 
 ./iotivity-lite/port/linux/
 
 note that the executable needs to be started in folder where it recides to avoid issues with reading the security data.
 
 
-## reset device
+## Reset Device
 
 script: **reset.sh**
 
@@ -293,6 +297,6 @@ This script deletes the SVR settings in the security folder:
 The device will go to the ready for onboarding state.
 
 
-#  windows specific instructions
-instructions see :
+#  Windows Specific Instructions
+Windows specific instructions are available at :
 https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md
