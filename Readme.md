@@ -69,7 +69,7 @@ Folder structure after everything is installed and code is generated:
 The installDeviceBuilder script generates scripts in the folder above this repo.
 These scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
 
-Typical (network) setup contains:
+Typical development setup contains the following configuration:
      
               ----------------                  
              | PC/RaspberryPi |     
@@ -86,10 +86,12 @@ Typical (network) setup contains:
                --------------            ------------------         
                
      Where:
-        (Linux)PC/RaspberryPi = is the device that is being used to build the server
-        Android Device = device used to run the OTGC (android): 
-                see https://github.com/openconnectivityfoundation/development-support/otgc
         Router = home router, with Wifi Access point to connect the Android device
+        (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
+        Android Device = device used to run the OCF Client (OTGC): 
+                see https://github.com/openconnectivityfoundation/development-support/otgc
+        Note that a windows (10) PC instead of an Android device can be used to run OCFDeviceSpy as OCF Client.
+            see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 
 
 referenced information:
