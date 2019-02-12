@@ -1,21 +1,21 @@
 # IOTivity-lite setup
 
 This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
-The build enviroment is suited to build OCF server devices.
+The build enviroment is taylored to create OCF Server Devices.
 
 The script setup the next repos (from github) in the folders:
 - iotivity-lite (OCF 1.3 version) note that the created folder is called iotivity-constrained.
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
 
-## Instalation
-Instalation of the enviroment can be done with a single curl command:
+## Installation
+Installation of the enviroment can be done with a single curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
-This command sets up the full environment (for Linux and Windows).
+The curl command sets up the full environment (for Linux and Windows).
 
-If one wants to the details of what the script does:
+If one wants to know the details of what the script does:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 
@@ -25,7 +25,7 @@ Executing the installation command requires:
 
 Note that installing git clients on windows installs a BASH shell script environment
 
-## Folder structure after installation
+## Folder Structure After Installation
 Folder structure after everything is installed and code is generated:
     
     ~/iot-lite        
@@ -71,13 +71,12 @@ Folder structure after everything is installed and code is generated:
                   |-- folder
                   |-- folder/subfolder
                   |- file
-
         
         
-The installDeviceBuilder script generates scripts in the folder above this repo.
+The installDeviceBuilder script generates scripts in the top level folder (e.g. above this repo).
 These scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
 
-## Development setup
+## Development Setup
 Typical development setup contains the following configuration:
      
               ----------------                  
@@ -105,7 +104,7 @@ Note that a windows (10) PC instead of an Android device can be used to run OCFD
 see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 
 
-## referenced information:
+## Referenced Information:
 
 | repo  |  description | location |
 | ----- | ----- | -------|
@@ -117,7 +116,7 @@ see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 | OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
     
     
-# development flow
+# Development Flow
 The development flow is based on bash scripts, hence the flow is generalized for Linux based systems.
 The development flow is depicted the figure below:
 
