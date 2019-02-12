@@ -18,20 +18,25 @@
 #
 #############################
 
+#
+# store the current path and go up 1 folder
+#
 curpwd=`pwd`
 cd ..
-
-# step 1
+#
+# step 1 : install all essential things to compile the code on a Linux machine
+#
 sudo apt-get -y install build-essential git libtool \
 autoconf valgrind doxygen wget unzip cmake libboost-dev \
 libboost-program-options-dev libboost-thread-dev uuid-dev \
 libexpat1-dev libglib2.0-dev libsqlite3-dev libcurl4-gnutls-dev
-
-# step 2
-#git clone https://gerrit.iotivity.org/gerrit/iotivity-constrained
+#
+# step 2 : clone the code
+#
 git clone https://github.com/iotivity/iotivity-constrained.git
-#mv -f iotivity-constrained iotivity-lite
-
+#
+# step 3: get the appropriate tag (if no tag supplied, it is the master)
+#
 cd iotivity-constrained
 if [ "$1" != "" ]; then
   echo " ==> checking out $1"
@@ -39,5 +44,7 @@ if [ "$1" != "" ]; then
 else
   echo " ==> iotivity-lite: master"
 fi
-
+#
+# go back to the original start folder
+#
 cd $curpwd

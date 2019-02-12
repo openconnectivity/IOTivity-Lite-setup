@@ -17,25 +17,38 @@ set -x #echo on
 # limitations under the License.
 #
 #############################
+
+#
+# store the current path and go up 1 folder
+#
 CURPWD=`pwd`
-
+#
 #path of the code
+#
 code_path=OCFDeviceBuilder
-
+# checking the architecture of the device that is being used to run the script
 # linux pi
 # default
 ARCH=`uname -m`
 
 echo "using architecture: $ARCH"
 
+#
+# go one folder up, so that the repo is placed on the same level
+#
 cd ..
-# clone the repo
+#
+# clone the repo of Device Builder
+#
 git clone https://github.com/openconnectivityfoundation/DeviceBuilder.git
-# get the initial example 
+#
+# get the initial example from the repo, and put it on the top level folder
+#
 cp DeviceBuilder/DeviceBuilderInputFormat-file-examples/input-lightdevice.json example.json
 
-
-# create the generation script
+#
+# create the generation script, on the top level folder
+#
 echo "#!/bin/bash" > gen.sh
 echo "cd DeviceBuilder" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\"" >> gen.sh
@@ -51,8 +64,9 @@ echo "cp ./device_output/code/simpleserver.c ./iotivity-constrained/apps/simples
 echo "# copy over the IDD file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-constrained/include/server_introspection.dat.h " >> gen.sh
 
-
-# create the build script
+#
+# create the build script, on the top level folder
+#
 echo "#!/bin/bash" > build.sh
 echo "cd iotivity-constrained/port/linux/" >> build.sh
 echo "#comment out one of the next lines to build another port" >> build.sh
@@ -63,16 +77,19 @@ echo "#uncomment next line for building the debug version" >> build.sh
 echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server" >> build.sh
 echo "make -f devbuildmake DYNAMIC=1 device_builder_server" >> build.sh
 echo "cd ../../.." >> build.sh
-
-# create the edit code script
+#
+# create the edit code script, on the top level folder
+#
 echo "#!/bin/bash" > edit_code.sh
 echo "nano ./iotivity-constrained/apps/device_builder_server.c" >> edit_code.sh
-
-# create the edit input script
+#
+# create the edit input script, on the top level folder
+#
 echo "#!/bin/bash" > edit_input.sh
 echo "nano ./example.json" >> edit_input.sh
-
-# create the run script
+#
+# create the run script, on the top level folder
+#
 echo "#!/bin/bash"> run.sh
 echo 'CURPWD=`pwd`'>> run.sh
 echo "cd ./iotivity-constrained/port/linux/" >> run.sh
@@ -84,22 +101,31 @@ echo "ls" >> run.sh
 echo "./device_builder_server" >> run.sh
 echo 'cd $CURPWD' >> run.sh
 
-# create the reset script
+#
+# create the reset script, on the top level folder
+#
 echo "#!/bin/bash"> reset.sh
 for d in ./iotivity-constrained/port/*/ ; do
     echo "rm -rf ${d}device_builder_server_creds" >> reset.sh
 done
 #echo "rm -rf ./iotivity-constrained/port/linux/device_builder_server_creds" >> reset.sh
 
-
+#
+# go back to the current folder
+#
 cd $CURPWD
 
-echo "making the example directory"
+#echo "making the example directory"
 #mkdir -p ../iotivity/examples/${code_path}
+
+#
 # add the build file
+#
 for d in ../iotivity-constrained/port/*/ ; do
     cp ./environment-changes/devbuildmake ${d}devbuildmake
 done
 
-
+#
+# make all scripts executable 
+#
 chmod a+x ../*.sh
