@@ -22,6 +22,7 @@ https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 Executing the installation command requires:
 - internet access
 - system that contains the BASH shell script environment.
+
 Note that installing git clients on windows installs a BASH shell script environment
 
 ## Folder structure after installation
