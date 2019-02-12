@@ -7,15 +7,22 @@ The script setup the next repos (from github) in the folders:
 - iotivity-lite (OCF 1.3 version) note that the created folder is called iotivity-constrained.
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
-The curl command:
+
+## Instalation
+Instalation of the enviroment can be done with a single curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
-sets up the full environment (for linux and windows).
+This command sets up the full environment (for Linux and Windows).
 
 If one wants to the details of what the script does:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
+
+Executing the installation command requires:
+- internet access
+- system that contains the BASH shell script environment.
+Note that installing git clients on windows installs a BASH shell script environment
 
 ## Folder structure after installation
 Folder structure after everything is installed and code is generated:
