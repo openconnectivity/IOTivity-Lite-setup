@@ -85,7 +85,8 @@ Typical (network) setup contains:
                
      Where:
         (Linux)PC/RaspberryPi = is the device that is being used to build the server
-        Android Device = device used to run the OTGC (android): see https://github.com/openconnectivityfoundation/development-support/otgc
+        Android Device = device used to run the OTGC (android): 
+                see https://github.com/openconnectivityfoundation/development-support/otgc
         Router = home router, with Wifi Access point to connect the Android device
 
 
@@ -98,11 +99,11 @@ referenced information:
 | IOTivity-constrained     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
-| OCF clients          |  OCF development clients  |  |
+| OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
     
     
-# development flow on linux 
-
+# development flow
+The development flow is based on bash scripts, hence the flow is generalized for Linux based systems.
 The development flow is depicted the figure below:
 
                    start
