@@ -17,7 +17,7 @@ If one wants to the details of what the script does:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 
-
+## Folder structure after installation
 Folder structure after everything is installed and code is generated:
     
     ~/iot-lite        
@@ -69,6 +69,7 @@ Folder structure after everything is installed and code is generated:
 The installDeviceBuilder script generates scripts in the folder above this repo.
 These scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
 
+## Development setup
 Typical development setup contains the following configuration:
      
               ----------------                  
@@ -96,7 +97,7 @@ Note that a windows (10) PC instead of an Android device can be used to run OCFD
 see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 
 
-referenced information:
+## referenced information:
 
 | repo  |  description | location |
 | ----- | ----- | -------|
