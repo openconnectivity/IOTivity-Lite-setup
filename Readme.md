@@ -1,16 +1,19 @@
 # IOTivity-lite setup
 
 This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
-The script setup the next repos (from git) in the folders:
+The build enviroment is suited to build OCF server devices.
+
+The script setup the next repos (from github) in the folders:
 - iotivity-lite (OCF 1.3 version) note that the created folder is called iotivity-constrained.
 - DeviceBuilder (latest version)
+- IOTDataModels (latest version) resource definitions that are used as input for the code generation
 The curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
 sets up the full environment (for linux and windows).
 
-If one wants to see the script:
+If one wants to the details of what the script does:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
 https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
 
@@ -64,6 +67,27 @@ Folder structure after everything is installed and code is generated:
 The installDeviceBuilder script generates scripts in the folder above this repo.
 These scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
 
+Typical (network) setup contains:
+     
+              ----------------                  
+             | PC/RaspberryPi |     
+             | (dev system)   |             
+             |  OCF server    |              
+              ---------------- 
+                     |
+                wired|wifi
+                     |
+               --------------            ------------------             
+              |              |   wifi   |  Android Device  |
+    Internet--|    router    |--------- |  (test system)   |
+              |              |          | OCF Client (OTGC)| 
+               --------------            ------------------         
+               
+     Where:
+        (Linux)PC/RaspberryPi = is the device that is being used to build the server
+        Android Device = device used to run the OTGC (android): see https://github.com/openconnectivityfoundation/development-support/otgc
+        Router = home router, with Wifi Access point to connect the Android device
+
 
 referenced information:
 
@@ -74,7 +98,7 @@ referenced information:
 | IOTivity-constrained     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
-| OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
+| OCF clients          |  OCF development clients  |  |
     
     
 # development flow on linux 
