@@ -2,7 +2,7 @@
 
 This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
 The script setup the next repos (from git) in the folders:
-- iotivity-lite (latest version)
+- iotivity-lite (OCF 1.3 version) note that the created folder is called iotivity-constrained.
 - DeviceBuilder (latest version)
 The curl command:
 
@@ -28,7 +28,7 @@ Folder structure after everything is installed and code is generated:
         |               |- server_security.dat         SVR data
         |               |- server_introspection.dat.h  introspection device data, encoded in header file
         |
-        |-- iotivity-lite         IOTivity source code
+        |-- iotivity-constrained         IOTivity Lite source code
         |        | 
         |        |-- apps
         |        |      |- device_builder_server.c            <--- generated code
@@ -71,7 +71,7 @@ referenced information:
 | ----- | ----- | -------|
 | DeviceBuilder |  tool chain  | https://github.com/openconnectivityfoundation/DeviceBuilder |
 | swagger2x |  code generation  | https://github.com/openconnectivityfoundation/swagger2x |
-| IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
+| IOTivity-constrained     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
 | OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
@@ -135,26 +135,26 @@ The development flow is depicted the figure below:
 The Initial flow is doing a generation (with the supplied example):
 1. [gen.sh](#generate-code)
 	
-	generate the code
+	script to generate the code that represents the device.
 2. [build.sh](#build-code)
 	
-	build the code
+	script to build the generated code.
 3. [run.sh](#run-code)
 	
-	run (launch) the code
+	script to run (launch/start) the compiled (generated) code.
 
 # Repeat Flow
 The repeat flow is doing (without code generation):
 
 1. [edit_code.sh](#edit-code)
 	
-	edit the generated code with Nano
+	script to edit the generated code with Nano.
 2. [build.sh](#build-code)
 
-	build the code
+	script to build the generated code.
 3. [run.sh](#run-code)
 	
-	run (launch) the code
+	script to run (launch/start) the compiled (generated) code.
 	
 	
 if the device needs to be in ready for onboarding, then run the script [reset.sh](#reset-device)
@@ -169,7 +169,8 @@ https://github.com/openconnectivityfoundation/development-support
 # scripts
 
 ## edit_input.sh
-This scripts edits the device builder input file with nano.
+This scripts edits the device builder input file with Nano.
+Nano is a small editor that can be used to edit files in windowless system.
 
 ### Nano
 Nano is supplied on various linux systems like ubuntu and pi.
@@ -235,11 +236,9 @@ script: **run.sh**
 
 This script executes the executable in the folder where the executable resides in.
 
-e.g. executes in folder:
+e.g. it executes the device_builder_server executable (e.g. the server application) in folder:
 
 ./iotivity-lite/port/linux/
-
-the device_builder_server executable.
 
 note that the executable needs to be started in folder where it recides to avoid issues with reading the security data.
 
