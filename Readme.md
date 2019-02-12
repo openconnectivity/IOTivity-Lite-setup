@@ -85,13 +85,15 @@ Typical development setup contains the following configuration:
               |              |          | OCF Client (OTGC)| 
                --------------            ------------------         
                
-     Where:
-        Router = home router, with Wifi Access point to connect the Android device
-        (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
-        Android Device = device used to run the OCF Client (OTGC): 
-                see https://github.com/openconnectivityfoundation/development-support/otgc
-        Note that a windows (10) PC instead of an Android device can be used to run OCFDeviceSpy as OCF Client.
-            see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
+Where:
+  - Router = home router, with Wifi Access point to connect the Android device
+  - (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
+  - Android Device = device used to run the OCF Client (OTGC): 
+                
+    see https://github.com/openconnectivityfoundation/development-support/otgc
+           
+Note that a windows (10) PC instead of an Android device can be used to run OCFDeviceSpy as OCF Client.
+see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 
 
 referenced information:
