@@ -43,7 +43,9 @@ Folder structure after everything is installed and code is generated:
         |                     |- device_builder_server        <--- executable (after creation on linux)
         |                     |- devbuildmake                 <--- makefile with the target
         |                     |- Makefile                     <--- original make file from IOTivity_lite
-        |                     |- device_builder_server_creds  <--- SVR storage, when it is not there, it is ready for onboarding
+        |                     |- device_builder_server_creds  <--- SVR storage 
+        |                                                          when the folder is not there has the meaning: 
+        |                                                          The device is ready for onboarding
         |                   
         |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
         |-- IOTivity-Lite-setup   This github repo.
