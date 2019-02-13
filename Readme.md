@@ -171,13 +171,20 @@ The development flow is depicted the figure below:
 
 # Initial Flow
 
-The Initial flow is performing code generation (with the supplied example):
+These steps needs to be executed in the &lt;&gt;/iot-lite folder, 
+e.g. the folder that gets created by running the curl installation command.
+The goal is to run an OCF server by creating code, building and running the OCF server application.
+
 1. [gen.sh](#generate-code)
 	
-	script to generate the code that represents the device.
+	Script to generate the code that represents the device.
+    
+    The input is the file used to generate the code is __example.json__.
 2. [build.sh](#build-code)
 	
-	script to build the generated code.
+	Script to build the generated code.
+    
+    The __device_builder_server.c__ code  is being build is located at &lt;&gt;/iot-lite/iotivity-constrained/apps folder.
 3. [run.sh](#run-code)
 	
 	script to run (launch/start) the compiled (generated) code.
