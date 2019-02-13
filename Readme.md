@@ -95,7 +95,7 @@ Typical development setup contains the following configuration:
                
 Where:
   - Router = home router, with Wifi Access point to connect the Android device
-    - The IP network should be IPv6 capable and have multicast enabled.
+    - The IP network should be IPv6 capable and have CoAP multicast enabled.
   - (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
   - Android Device = device used to run the OCF Client (OTGC): 
                 
