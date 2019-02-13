@@ -95,6 +95,7 @@ Typical development setup contains the following configuration:
                
 Where:
   - Router = home router, with Wifi Access point to connect the Android device
+    - The IP network should be IPv6 capable and have multicast enabled.
   - (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
   - Android Device = device used to run the OCF Client (OTGC): 
                 
@@ -171,7 +172,7 @@ The development flow is depicted the figure below:
 
 # Initial Flow
 
-These steps needs to be executed in the &lt;&gt;/iot-lite folder, 
+These steps needs to be executed in the __&lt;&gt;/iot-lite__ folder, 
 e.g. the folder that gets created by running the curl installation command.
 The goal is to run an OCF server by creating code, building and running the OCF server application.
 
@@ -184,10 +185,12 @@ The goal is to run an OCF server by creating code, building and running the OCF 
 	
 	Script to build the generated code.
     
-    The __device_builder_server.c__ code  is being build is located at &lt;&gt;/iot-lite/iotivity-constrained/apps folder.
+    The __device_builder_server.c__ code  is being build is located at __&lt;&gt;/iot-lite/iotivity-constrained/apps__ folder.
 3. [run.sh](#run-code)
 	
 	script to run (launch/start) the compiled (generated) code.
+    
+    The script executes __device_builder_server__ application in the __&lt;&gt;/iot-lite/iotivity-constrained/port/linux__ folder.
 
 # Repeat Flow
 The repeat flow is modifying the generated code (without code generation):
