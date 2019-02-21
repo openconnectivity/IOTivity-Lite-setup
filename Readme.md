@@ -4,7 +4,7 @@ This repo contains bash scripts to setup a build enviroment to use DeviceBuilder
 The build enviroment is taylored to create OCF Server Devices.
 
 The script setup the next repos (from github) in the folders:
-- iotivity-lite (OCF 1.3 version) note that the created folder is called iotivity-constrained.
+- iotivity-lite (OCF 1.3 version)
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
 
@@ -39,7 +39,7 @@ Folder structure after everything is installed and code is generated:
         |               |- server_security.dat         SVR data
         |               |- server_introspection.dat.h  introspection device data, encoded in header file
         |
-        |-- iotivity-constrained         IOTivity Lite source code
+        |-- iotivity-lite         IOTivity Lite source code
         |        | 
         |        |-- apps
         |        |      |- device_builder_server.c            <--- generated code
@@ -111,7 +111,7 @@ see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
 | ----- | ----- | -------|
 | DeviceBuilder |  tool chain  | https://github.com/openconnectivityfoundation/DeviceBuilder |
 | swagger2x |  code generation  | https://github.com/openconnectivityfoundation/swagger2x |
-| IOTivity-constrained     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-constrained |
+| IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-lite |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
 | core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
 | OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
@@ -185,12 +185,12 @@ The goal is to run an OCF server by creating code, building and running the OCF 
 	
 	Script to build the generated code.
     
-    The __device_builder_server.c__ code  is being build is located at __&lt;&gt;/iot-lite/iotivity-constrained/apps__ folder.
+    The __device_builder_server.c__ code  is being build is located at __&lt;&gt;/iot-lite/iotivity-lite/apps__ folder.
 3. [run.sh](#run-code)
 	
 	script to run (launch/start) the compiled (generated) code.
     
-    The script executes __device_builder_server__ application in the __&lt;&gt;/iot-lite/iotivity-constrained/port/linux__ folder.
+    The script executes __device_builder_server__ application in the __&lt;&gt;/iot-lite/iotivity-lite/port/linux__ folder.
 
 # Repeat Flow
 The repeat flow is modifying the generated code (without code generation):

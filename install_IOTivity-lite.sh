@@ -33,11 +33,11 @@ libexpat1-dev libglib2.0-dev libsqlite3-dev libcurl4-gnutls-dev
 #
 # step 2 : clone the code
 #
-git clone https://github.com/iotivity/iotivity-constrained.git
+git clone https://github.com/iotivity/iotivity-lite.git
 #
 # step 3: get the appropriate tag (if no tag supplied, it is the master)
 #
-cd iotivity-constrained
+cd iotivity-lite
 if [ "$1" != "" ]; then
   echo " ==> checking out $1"
   git checkout $1

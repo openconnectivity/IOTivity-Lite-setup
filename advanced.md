@@ -47,14 +47,14 @@ To get a fresh copy, delete the folder and rerun the install_IOTivity.sh script.
 using vs2017:
 
 - do the generation of the code as is with sh gen.sh.
-- this step creates in the folder iotivity-constrained (to be renamed) /apps the file device_builder_server.c 
+- this step creates in the folder iotivity-lite (to be renamed) /apps the file device_builder_server.c 
     - copy this file over the existing simpleserver_windows.code (not nice, but it works)
 - start up visual studio project "SimpleServer" in folder :
-    - \iotivity-constrained\port\windows\vs2015
+    - \iotivity-lite\port\windows\vs2015
     - IoTivity-Constrained project is the library, e.g. can't be runned.
 - when using visual studio 2017 instead of 2015: to a retarget on project.
 
 Resetting the device to ready for onboarding:
 
 delete the folder:
-- iotivity-constrained\port\windows\vs2015\Debug\x64\simpleserver_creds
+- iotivity-lite\port\windows\vs2015\Debug\x64\simpleserver_creds
