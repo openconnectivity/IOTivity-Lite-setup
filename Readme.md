@@ -17,7 +17,7 @@ The curl command sets up the full environment (for Linux and Windows).
 
 If one wants to know the details of what the script does:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
-https://github.com/openconnectivity/IOTivity-setup/blob/master/install.sh
+https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/install.sh
 
 Executing the installation command requires:
 - internet access
