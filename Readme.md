@@ -260,7 +260,8 @@ The following mechanisms are available to change the device type:
 The name can be change to something different. 
 This can be done by giving an input parameter to gen.sh.
 for example gen.sh blahblah will turn the name of the server into "blahblah".
-default the name is "server_lite_&lt;PID&gt;" and the PID is the current proces.
+Default the name of the device is "server_lite_&lt;PID&gt;", the PID is the current process number of the script.
+Hence the default name scheme creates unique device names.
 
 
 ### WARNING !!!
