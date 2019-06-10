@@ -263,6 +263,8 @@ for example gen.sh blahblah will turn the name of the server into "blahblah".
 default the name is "server_lite_&lt;PID&gt;" and the PID is the current proces.
 
 
+### WARNING !!!
+
 Running this script generates the device_output folder AND copies the result to the correct executable folder in the iotivity-lite tree structure.
 
 more info of the DeviceBuilder script can be found at:
