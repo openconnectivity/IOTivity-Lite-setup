@@ -46,7 +46,7 @@ cd IOTivity-Lite-setup
 #
 # install IOTivity-Lite, TAG=GETTING_STARTED_0
 #
-sh install_IOTivity-lite.sh GETTING_STARTED_0
+sh install_IOTivity-lite.sh GETTING_STARTED_2
 #
 # install device builder repo
 #
