@@ -317,6 +317,17 @@ This script deletes the SVR settings in the security folder:
 The device will go to the ready for onboarding state.
 
 
+
+## generate PKI certificates and header files
+
+script: **pki.sh**
+
+This script creates PKI based certificates and converts them into an header file so that they are used in the code.
+
+see for more info on security options: 
+https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/security.md
+
+
 #  Windows Specific Instructions
 Windows specific instructions are available at :
 https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md

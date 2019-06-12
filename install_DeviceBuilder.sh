@@ -63,6 +63,38 @@ echo "# copy over the file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/simpleserver_windows.c" >> gen.sh
 echo "# copy over the IDD file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-lite/include/server_introspection.dat.h " >> gen.sh
+echo "if [ ! -f ./pki_certs.zip ]; then" >> gen.sh
+echo "# only create when the file does not exist" >> gen.sh
+echo "sh ./pki.sh " >> gen.sh
+echo "fi"  >> gen.sh
+
+#
+# create the pki generation script, on the top level folder
+#
+echo "#!/bin/bash" > pki.sh
+echo "# website: https://pki.openconnectivity.org/ocfTestCerts/" >> pki.sh
+echo "# command to create the PKI zip file :" >> pki.sh
+echo "# curl -d \"cn=Common Name&org=Member Organization&major=2&minor=0&build=1&baseline0=off&black0=on&blue0=on&purple0=on&devName=Device Name&devMfr=Device Manufacturer&ianaPen=IANA Pen&model=CPL Model&version=CPL Version&secureBoot=off&hardwareStorage=on&mudUrl=https://www.domain.tld/resource\" -X POST https://pki.openconnectivity.org/ocfTestCerts/generateTestCert.jsp > CommonName.zip"  >> pki.sh
+echo "# Legend:"  >> pki.sh
+echo "#   SubjectDN fields (required)"  >> pki.sh
+echo "#           n=Common Name&org=Member Organization"  >> pki.sh
+echo "#   OCF Compliance extension fields"  >> pki.sh
+echo "#          major=2&minor=0&build=1&baseline0=off&black0=on&blue0=on&purple0=on&devName=Device Name&devMfr=Device Manufacturer "  >> pki.sh
+echo "#   OCF CPL Attributes extension fields"  >> pki.sh
+echo "#         ianaPen=IANA Pen&model=CPL Model&version=CPL Version"  >> pki.sh
+echo "#   OCF Security Claims fields"  >> pki.sh
+echo "#         secureBoot=off&hardwareStorage=on"  >> pki.sh
+echo "#   Manufacturer Usage Description"  >> pki.sh
+echo "#         mudUrl=https://www.domain.tld/resource"  >> pki.sh
+echo "#"  >> pki.sh
+echo "#if [ ! -f ./pki_certs.zip ]; then" >> pki.sh
+echo "# creating pki zip file " >> pki.sh
+echo "curl -d \"cn=pki_certs&org=OCF&major=2&minor=0&build=1&baseline0=on&black0=off&blue0=off&purple0=off&devName=DeviceName1&devMfr=OCF&ianaPen=IANA Pen&model=CPL Model&version=CPL Version&secureBoot=off&hardwareStorage=on&mudUrl=https://www.domain.tld/resource\" -X POST https://pki.openconnectivity.org/ocfTestCerts/generateTestCert.jsp > pki_certs.zip" >> pki.sh
+echo "#fi" >> pki.sh
+echo "# creating header file from pki zip file " >> pki.sh
+echo "python3 ./DeviceBuilder/src/pki2include.py -file pki_certs.zip" >> pki.sh
+echo "# copy header file into the iotivity-lite tree " >> pki.sh
+echo "cp ./pki_certs.zip.h ./iotivity-lite/include//pki_certs.h " >> pki.sh
 
 #
 # create the build script, on the top level folder
