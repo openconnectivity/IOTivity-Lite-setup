@@ -74,7 +74,7 @@ echo "fi"  >> gen.sh
 echo "#!/bin/bash" > pki.sh
 echo "# website: https://pki.openconnectivity.org/ocfTestCerts/" >> pki.sh
 echo "# command to create the PKI zip file :" >> pki.sh
-echo "# curl -d \"cn=Common Name&org=Member Organization&major=2&minor=0&build=1&baseline0=off&black0=on&blue0=on&purple0=on&devName=Device Name&devMfr=Device Manufacturer&ianaPen=IANA Pen&model=CPL Model&version=CPL Version&secureBoot=off&hardwareStorage=on&mudUrl=https://www.domain.tld/resource\" -X POST https://pki.openconnectivity.org/ocfTestCerts/generateTestCert.jsp > CommonName.zip"  >> pki.sh
+echo "# curl 'https://testcerts.kyrio.com/certificates' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' -H 'Origin: https://testcerts.kyrio.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json, text/plain, */*' -H 'Referer: https://testcerts.kyrio.com/' -H 'DNT: 1' --data-binary '{"device":{"manufacturer":"OCF","name":"DeviceName1"},"subject":"pki_certs","sizeCategory":"SMALL","OCFVersionCompliance":"2.0.0"}' --compressed > pki_certs.zip" >> pki.sh
 echo "# Legend:"  >> pki.sh
 echo "#   SubjectDN fields (required)"  >> pki.sh
 echo "#           n=Common Name&org=Member Organization"  >> pki.sh
@@ -89,7 +89,7 @@ echo "#         mudUrl=https://www.domain.tld/resource"  >> pki.sh
 echo "#"  >> pki.sh
 echo "#if [ ! -f ./pki_certs.zip ]; then" >> pki.sh
 echo "# creating pki zip file " >> pki.sh
-echo "curl -d \"cn=pki_certs&org=OCF&major=2&minor=0&build=1&baseline0=on&black0=off&blue0=off&purple0=off&devName=DeviceName1&devMfr=OCF&ianaPen=IANA Pen&model=CPL Model&version=CPL Version&secureBoot=off&hardwareStorage=on&mudUrl=https://www.domain.tld/resource\" -X POST https://pki.openconnectivity.org/ocfTestCerts/generateTestCert.jsp > pki_certs.zip" >> pki.sh
+echo "curl 'https://testcerts.kyrio.com/certificates' -H 'Sec-Fetch-Mode: cors' -H 'Sec-Fetch-Site: same-origin' -H 'Origin: https://testcerts.kyrio.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Content-Type: application/json' -H 'Accept: application/json, text/plain, */*' -H 'Referer: https://testcerts.kyrio.com/' -H 'DNT: 1' --data-binary '{"device":{"manufacturer":"OCF","name":"DeviceName1"},"subject":"pki_certs","sizeCategory":"SMALL","OCFVersionCompliance":"2.0.0"}' --compressed > pki_certs.zip" >> pki.sh
 echo "#fi" >> pki.sh
 echo "# creating header file from pki zip file " >> pki.sh
 echo "python3 ./DeviceBuilder/src/pki2include.py -file pki_certs.zip" >> pki.sh
