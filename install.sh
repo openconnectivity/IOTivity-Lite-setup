@@ -44,9 +44,9 @@ git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git
 #
 cd IOTivity-Lite-setup
 #
-# install IOTivity-Lite, TAG=GETTING_STARTED_0
+# install IOTivity-Lite, TAG=2.0.5
 #
-sh install_IOTivity-lite.sh GETTING_STARTED_2
+sh install_IOTivity-lite.sh 2.0.5
 #
 # install device builder repo
 #
