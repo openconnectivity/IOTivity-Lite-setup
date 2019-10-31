@@ -25,6 +25,8 @@ Executing the installation command requires:
 
 Note that installing git clients on windows installs a BASH shell script environment
 
+Note, Linux systems will be upgraded!
+
 ## Folder Structure After Installation
 Folder structure after everything is installed and code is generated:
     
