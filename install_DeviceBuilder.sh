@@ -66,7 +66,7 @@ echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-lite/include
 echo "if [ ! -f ./pki_certs.zip ]; then" >> gen.sh
 echo "# only create when the file does not exist" >> gen.sh
 echo "#sh ./pki.sh " >> gen.sh
-echo "sh ./manufacturer_pki.sh" >> gen.sh
+echo "sh ./pki.sh" >> gen.sh
 echo "echo \" \" ">> gen.sh
 echo "fi"  >> gen.sh
 
