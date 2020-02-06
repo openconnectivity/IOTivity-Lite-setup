@@ -33,6 +33,7 @@ Folder structure after everything is installed and code is generated:
     ~/iot-lite        
         |-- core             core resource definitions (in swagger) 
         |-- DeviceBuilder    The device builder tool chain
+	|                    merging OAS2.0 files into 1 large OAS2.0 file for code generation
         |-- device_output    The output of device builder.
         |         |
         |         |-- code   The generated code.
@@ -57,9 +58,9 @@ Folder structure after everything is installed and code is generated:
         |                                                          when the folder is not there has the meaning: 
         |                                                          The device is ready for onboarding
         |                   
-        |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
+        |-- IOTDataModels    oneIOTa resource definitions (in OAS2.0 format)
         |-- IOTivity-Lite-setup   This github repo.
-        |-- swagger2x        swagger2x code generation
+        |-- swagger2x        code generation tool, converting OAS2.0 into code
         |- gen.sh            generation command to convert the example.json in to code
         |- build.sh          building the generated code
         |- run.sh            run the generated code
@@ -75,14 +76,16 @@ Folder structure after everything is installed and code is generated:
                   |- file
         
         
-The installDeviceBuilder script generates scripts in the top level folder (e.g. above this repo).
-These scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
+The installDeviceBuilder script generates scripts in the top level folder (e.g. the folder above this repo).
+The generated scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
+For more advanced usage, use the commands in the scrips itself, it allows for more flexibility in the development process.
 
 ## Development Setup
+
+
 Typical development setup contains the following configuration:
      
-              ----------------                  
-             | PC/RaspberryPi |     
+              ----------------        
              | (dev system)   |             
              |  OCF server    |              
               ---------------- 
@@ -90,7 +93,7 @@ Typical development setup contains the following configuration:
                 wired|wifi
                      |
                --------------            ------------------             
-              |              |   wifi   |  Android Device  |
+              |              |   wifi   |                  |
     Internet--|    router    |--------- |  (test system)   |
               |              |          | OCF Client (OTGC)| 
                --------------            ------------------         
@@ -98,14 +101,18 @@ Typical development setup contains the following configuration:
 Where:
   - Router = home router, with Wifi Access point to connect the Android device
     - The IP network should be IPv6 capable and have CoAP multicast enabled.
-  - (Linux)PC/RaspberryPi = is the device that is being used to build the OCF server
-  - Android Device = device used to run the OCF Client (OTGC): 
+  - OCF Server = is the device that is being used to build the OCF server
+  	- Linux PC or Raspberry Pi
+  - OCF Client = device used to run the OCF Client (OTGC)
+  	- Linux PC (build your own on target PC)
+  	- Raspberry Pi (build your own on a PI)
+	- Android Phone (OTGC as pre-build apk available)
                 
-    see https://github.com/openconnectivityfoundation/development-support/otgc
+    see for options on OTGC: https://github.com/openconnectivityfoundation/development-support/otgc
            
-Note that a windows (10) PC instead of an Android device can be used to run OCFDeviceSpy as OCF Client.
+Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
 see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
-
+DeviceSpy is a lower level OCF client where the user needs to interact with the device on JSON level.
 
 ## Referenced Information:
 
@@ -297,7 +304,7 @@ The saved file can be compiled without copy pasting.
 
 Typical changes to be applied on the code:
 - making sure that the code passes CTT.
-	- Some resources have mandatory behavior not captured in OAS format.
+	- Some resources may have mandatory behavior not captured in OAS2.0 format.
 - attaching the code to hardware.
 	- See the TODO comments in the generated code,
 	  these TODOs indicates where the code should be inserted.
