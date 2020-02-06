@@ -233,7 +233,12 @@ nano beginners guide:
 
 https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
 
-### input file
+Typical changes on the input file for code generation:
+- adding/changing resources
+- removal of **optional** properties on the resource
+- removal of the RETRIEVE method (e.g. POST)
+
+### Input file
 Device Builder input file information can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
 
@@ -284,6 +289,12 @@ The script is starting the Nano editor with the generated code in the IOTivity t
 The saved file can be compiled without copy pasting.
 
 **Note that running gen.sh will overwrite the made changes!!**
+
+Typical changes to be applied on the code:
+- making sure that the code passes CTT
+	- Some resources have mandatory behavior not captured in OAS format.
+- attaching the code to hardware
+	- See the TODO, in where the code should be inserted
 
 ## Build Code
 
