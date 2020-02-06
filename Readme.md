@@ -33,7 +33,7 @@ Folder structure after everything is installed and code is generated:
     ~/iot-lite        
         |-- core             core resource definitions (in swagger) 
         |-- DeviceBuilder    The device builder tool chain
-	|                    merging OAS2.0 files into 1 large OAS2.0 file for code generation
+        |                    merging OAS2.0 files into 1 large OAS2.0 file for code generation
         |-- device_output    The output of device builder.
         |         |
         |         |-- code   The generated code.
