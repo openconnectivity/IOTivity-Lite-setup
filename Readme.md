@@ -244,6 +244,8 @@ Typical changes on the input file for code generation:
 - adding/changing resources.
 - removal of **optional** properties on the resource.
 - removal of the RETRIEVE method (e.g. POST).
+Information on available which device types should implement which resources can be found [here] (https://openconnectivityfoundation.github.io/devicemodels/docs/index.html).
+Information on the individual resources can be found in [oneIOTa] (https://oneiota.org).
 
 Recommendation: 
 
