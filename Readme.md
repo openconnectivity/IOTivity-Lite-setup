@@ -16,8 +16,8 @@ Installation of the enviroment can be done with a single curl command:
 The curl command sets up the full environment (for Linux and Windows).
 
 If one wants to know the details of what the script does:
-```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look at
-https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/install.sh
+```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look 
+[here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/install.sh)
 
 Executing the installation command requires:
 - internet access
@@ -108,22 +108,22 @@ Where:
   	- Raspberry Pi (build your own on a PI)
 	- Android Phone (OTGC as pre-build apk available)
                 
-    see for options on OTGC: https://github.com/openconnectivityfoundation/development-support/otgc
+    see for options on [OTGC](https://github.com/openconnectivityfoundation/development-support/otgc)
            
 Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
-see https://github.com/openconnectivityfoundation/development-support/DeviceSpy
+see [Device Spy](https://github.com/openconnectivityfoundation/development-support/DeviceSpy)
 DeviceSpy is a lower level OCF client where the user needs to interact with the device on JSON level.
 
 ## Referenced Information:
 
-| repo  |  description | location |
+| repo  |  description |
 | ----- | ----- | -------|
-| DeviceBuilder |  tool chain  | [Device Builder github](https://github.com/openconnectivityfoundation/DeviceBuilder) |
-| swagger2x |  code generation  | https://github.com/openconnectivityfoundation/swagger2x |
-| IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-lite |
-| IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
-| core          |  OCF core data models  | https://github.com/openconnectivityfoundation/core |
-| OCF clients          |  OCF development clients  | https://github.com/openconnectivityfoundation/development-support |
+| [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
+| [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
+| [IoTivity-lite](https://iotivity.org/ https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
+| [IOTdataModels] (https://github.com/openconnectivityfoundation/IoTDataModels) |  [oneIOTa](https://oneiota.org)  |
+| [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
+| [OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
     
     
 # Development Flow
