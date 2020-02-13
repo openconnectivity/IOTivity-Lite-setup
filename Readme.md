@@ -118,7 +118,7 @@ DeviceSpy is a lower level OCF client where the user needs to interact with the 
 
 | repo  |  description | location |
 | ----- | ----- | -------|
-| DeviceBuilder |  tool chain  | https://github.com/openconnectivityfoundation/DeviceBuilder |
+| DeviceBuilder |  tool chain  | [Device Builder github](https://github.com/openconnectivityfoundation/DeviceBuilder) |
 | swagger2x |  code generation  | https://github.com/openconnectivityfoundation/swagger2x |
 | IOTivity-lite     |  C code (latest)     | https://iotivity.org/ https://github.com/iotivity/iotivity-lite |
 | IOTdataModels  |  oneIOTa data models https://oneiota.org  |https://github.com/openconnectivityfoundation/IoTDataModels |
