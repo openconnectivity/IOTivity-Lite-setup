@@ -311,7 +311,10 @@ Typical changes to be applied on the code:
 	- Some resources may have mandatory behavior not captured in OAS2.0 format.
 - attaching the code to hardware.
 	- See the TODO comments in the generated code,
-	  these TODOs indicates where the code should be inserted.
+	  these TODOs indicates where the code could be inserted.
+
+more info about the structure of the generated code can be found at:
+https://github.com/openconnectivityfoundation/swagger2x/blob/master/src/templates/IOTivity-lite/readme.md
 
 ## Build Code
 
