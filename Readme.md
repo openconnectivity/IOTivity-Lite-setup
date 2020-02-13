@@ -251,12 +251,12 @@ Information on the individual resources in OAS2.0 format can be found in https:/
 
 Recommendation: 
 
-**Make sure that before starting to change the code, all resources & properties are supported by the generated code.**
+**Make sure that before starting to change the generated code, all resources & properties are supported by the generated code.**
 
 
 ### Input file
 Device Builder input file information can be found at:
-https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples
+https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples/readme.md
 
     
 ## Generate Code
@@ -307,13 +307,17 @@ The saved file can be compiled without copy pasting.
 **Note that running gen.sh will overwrite the made changes!!**
 
 Typical changes to be applied on the code:
-- making sure that the code passes CTT.
+- making sure that the code passes OCF Compliance Test Tool (CTT).
 	- Some resources may have mandatory behavior not captured in OAS2.0 format.
+	This behaviour has be added in the resource handlers functions of the resource.
 - attaching the code to hardware.
-	- See the TODO comments in the generated code,
-	  these TODOs indicates where the code could be inserted.
+	- See the TODO comments in the generated code.
+	  The TODOs indicates where the code could be inserted.
+	  There are different insertions, depending on whether the resource is a sensor or an actuator.
+        - See also the raspberry hat examples
+	  these examples have code to talk to the sensors and actuators of raspberry hat.  
 
-more info about the structure of the generated code can be found at:
+More info about the structure of the generated code can be found at:
 https://github.com/openconnectivityfoundation/swagger2x/blob/master/src/templates/IOTivity-lite/readme.md
 
 ## Build Code
