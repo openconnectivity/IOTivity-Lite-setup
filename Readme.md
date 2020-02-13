@@ -252,7 +252,7 @@ This link contains the syntax and some examples of input files.
 Nano is a small editor that can be used to edit files in windowless system.
 Nano is supplied on various linux systems like ubuntu and raspberry pi.
 Please make sure when generating a new version, that a changed file is saved under a different name.
-Nano beginners guide is availble[here](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/)
+Nano beginners guide is available [here](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/).
     
 ## Generate Code
 
@@ -286,7 +286,7 @@ Hence the default name scheme creates unique device names.
 
 Running this script generates the device_output folder AND copies the result to the correct executable folder in the iotivity-lite tree structure.
 
-more info of the DeviceBuilder script can be found [here](https://github.com/openconnectivityfoundation/DeviceBuilder)
+more info of the DeviceBuilder script can be found [here](https://github.com/openconnectivityfoundation/DeviceBuilder).
 
 **Note that running gen.sh will overwrite the made code changes!!**
 
@@ -311,7 +311,7 @@ Typical changes to be applied on the code:
         - See also the raspberry hat examples
 	  these examples have code to talk to the sensors and actuators of raspberry hat.  
 
-More info about the structure of the generated code can be found [here](https://github.com/openconnectivityfoundation/swagger2x/blob/master/src/templates/IOTivity-lite/readme.md)
+More info about the structure of the generated code can be found [here](https://github.com/openconnectivityfoundation/swagger2x/blob/master/src/templates/IOTivity-lite/readme.md).
 
 ## Build Code
 
@@ -358,4 +358,4 @@ see for more info on [security options](https://github.com/openconnectivity/IOTi
 
 
 #  Windows Specific Instructions
-Windows specific instructions are available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md)
+Windows specific instructions are available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md).
