@@ -229,7 +229,7 @@ https://github.com/openconnectivityfoundation/development-support
 
 ## edit_input.sh
 This scripts edits the device builder input file with [Nano](#Nano) editor.
-The file being edited is the file in iotivity tree.
+The input file being edited is located at the top of the tree.
 
 Typical changes on the input file for code generation can be:
 - adding/changing resources.
@@ -300,7 +300,7 @@ https://github.com/openconnectivityfoundation/DeviceBuilder
 script: **edit_code.sh**
 
 This scripts edits the generated C code __device_builder_server.c__ with [Nano](#nano).
-The script is starting the Nano editor with the generated code in the IOTivity tree.
+The script loads the Nano editor with the generated code in the IOTivity tree.
 The saved file can be compiled without copy pasting.
 
 **Note that running gen.sh will overwrite the made changes!!**
