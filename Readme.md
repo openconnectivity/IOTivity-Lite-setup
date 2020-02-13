@@ -228,36 +228,35 @@ https://github.com/openconnectivityfoundation/development-support
 # Scripts
 
 ## edit_input.sh
-This scripts edits the device builder input file with Nano.
-Nano is a small editor that can be used to edit files in windowless system.
-
-### Nano
-Nano is supplied on various linux systems like ubuntu and pi.
+This scripts edits the device builder input file with [Nano](#Nano) editor.
 The file being edited is the file in iotivity tree.
-so please make sure when generating a new version, that a changed file is saved under a different name.
 
-nano beginners guide:
-
-https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
-
-Typical changes on the input file for code generation:
+Typical changes on the input file for code generation can be:
 - adding/changing resources.
 - removal of **optional** properties on the resource.
-- removal of the RETRIEVE method (e.g. POST).
+- removal of the UPDATE method (e.g. POST).
+Things to check:
+- do not remove mandatory features from a resource
+- make sure that if an UPDATE method is removed, also change the supported inteface (if)
 
 Information on available which device types should implement which resources can be found at https://openconnectivityfoundation.github.io/devicemodels/docs/index.html.
-
 Information on the individual resources in OAS2.0 format can be found in https://oneiota.org.
 
 Recommendation: 
 
 **Make sure that before starting to change the generated code, all resources & properties are supported by the generated code.**
 
-
-### Input file
-Device Builder input file information can be found at:
+### Device Builder Input file
+More information on the Device Builder input file can be found at:
 https://github.com/openconnectivityfoundation/DeviceBuilder/tree/master/DeviceBuilderInputFormat-file-examples/readme.md
+This link contains the syntax and some examples of input files.
 
+#### Nano
+Nano is a small editor that can be used to edit files in windowless system.
+Nano is supplied on various linux systems like ubuntu and raspberry pi.
+Please make sure when generating a new version, that a changed file is saved under a different name.
+Nano beginners guide is availble at:
+https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/
     
 ## Generate Code
 
