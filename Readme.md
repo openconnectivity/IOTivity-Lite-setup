@@ -108,16 +108,16 @@ Where:
   	- Raspberry Pi (build your own on a PI)
 	- Android Phone (OTGC as pre-build apk available)
                 
-    see for options on [OTGC](https://github.com/openconnectivityfoundation/development-support/otgc)
+    see for options on [OTGC](https://openconnectivityfoundation.github.io//development-support/otgc)
            
 Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
-see [Device Spy](https://github.com/openconnectivityfoundation/development-support/DeviceSpy)
+see [Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy)
 DeviceSpy is a lower level OCF client where the user needs to interact with the device on JSON level.
 
 ## Referenced Information:
 
 | repo  |  description |
-| ----- | ----- | -------|
+| ----- | ----- |
 | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
 | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
 | [IoTivity-lite](https://iotivity.org/ https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
