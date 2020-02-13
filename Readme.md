@@ -311,7 +311,7 @@ Typical changes to be applied on the code:
         - See also the raspberry hat examples
 	  these examples have code to talk to the sensors and actuators of raspberry hat.  
 
-More info about the structure of the generated code can be found [here](https://github.com/openconnectivityfoundation/swagger2x/blob/master/src/templates/IOTivity-lite/readme.md).
+More info about the structure of the generated code can be found [here](https://openconnectivityfoundation.github.io/swagger2x/src/templates/IOTivity-lite).
 
 ## Build Code
 
