@@ -58,7 +58,7 @@ Folder structure after everything is installed and code is generated:
         |                                                          when the folder is not there has the meaning: 
         |                                                          The device is ready for onboarding
         |                   
-        |-- IOTDataModels    oneIOTa resource definitions (in OAS2.0 format)
+        |-- IoTDataModels    oneIOTa resource definitions (in OAS2.0 format)
         |-- IOTivity-Lite-setup   This github repo.
         |-- swagger2x        code generation tool, converting OAS2.0 into code
         |- gen.sh            generation command to convert the example.json in to code
@@ -356,6 +356,9 @@ This script creates PKI based certificates and converts them into an header file
 
 see for more info on [security options](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/security.md)
 
+
+#  Adding your own models 
+Instructions to add your own models available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/adding_my_own_models.md).
 
 #  Windows Specific Instructions
 Windows specific instructions are available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md).
