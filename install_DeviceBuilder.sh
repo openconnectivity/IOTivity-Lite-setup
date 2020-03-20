@@ -154,8 +154,8 @@ done
 echo "#uncomment next line for having a clean build" >> build.sh
 echo "#make clean" >> build.sh
 echo "#uncomment next line for building the debug version" >> build.sh
-echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server $1 $2 $3" >> build.sh
-echo "make -f devbuildmake DYNAMIC=1 device_builder_server $1 $2 $3" >> build.sh
+echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server \$1 \$2 \$3" >> build.sh
+echo "make -f devbuildmake DYNAMIC=1 device_builder_server \$1 \$2 \$3" >> build.sh
 echo "cd ../../.." >> build.sh
 #
 # create the edit code script, on the top level folder
