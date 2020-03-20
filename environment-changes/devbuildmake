@@ -1,6 +1,9 @@
 # top make file to build the generated device_builder_server.c
 # to be used as top make file when calling make
 # make -f devbuildmake <targets>
+
+#CLOUD=1
+
 include Makefile
 
 # typical addition of CFLAGS
@@ -15,6 +18,6 @@ include Makefile
 #
 # additional target for device_builder_server executable.
 #
-device_builder_server: libiotivity-lite-server.a ../../apps/device_builder_server.c
+device_builder_server: libiotivity-lite-client-server.a ../../apps/device_builder_server.c
 	@mkdir -p $@_creds
-	${CC} -o $@ ../../apps/device_builder_server.c libiotivity-lite-server.a -DOC_SERVER ${CFLAGS}  ${LIBS}
+	${CC} -o $@ ../../apps/device_builder_server.c libiotivity-lite-client-server.a -DOC_CLIENT -DOC_SERVER ${CFLAGS}  ${LIBS}
