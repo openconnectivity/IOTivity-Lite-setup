@@ -323,9 +323,9 @@ e.g. run in the iotivity-lite/port/linux folder the ```make -f devbuildmake devi
 To build another port (e.g. OS):
 - uncomment out the listed port in the script, and comment out the default linux.
 
-To build clean edit the file and comment out the line with __make clean__.
+To have clean build edit the build.sh file and comment out the line: __make clean__.
 
-to build for cloud add on the command line CLOUD=1
+To build a server that is cloud capable, add on the command line the compile directive: CLOUD=1
 e.g.: __sh build.sh CLOUD=1__
 
 ## Run Code
