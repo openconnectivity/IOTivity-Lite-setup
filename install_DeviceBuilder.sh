@@ -53,30 +53,42 @@ echo "#!/bin/bash" > gen.sh
 echo "cd DeviceBuilder" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\" $1" >> gen.sh
 echo "cd .." >> gen.sh
-echo "# copying source code to compile location" >> gen.sh
+echo "#" >> gen.sh
+echo "# copying source code to compile location (linux)" >> gen.sh
+echo "if [ ! -f ./iotivity-lite/apps/device_builder_server.c_org ]; then" >> gen.sh
+echo "  # keep the original file for the windows solution, but do this only once" >> gen.sh
+echo "  cp ./iotivity-lite/apps/device_builder_server.c ./iotivity-lite/apps/device_builder_server.c_org" >> gen.sh
+echo "fi" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/device_builder_server.c " >> gen.sh
-echo "if [ ! -f ./iotivity-liteapps/simpleserver_windows.c_org ]; then" >> gen.sh
+echo "#" >> gen.sh
+echo "# copying source code to compile location (windows)" >> gen.sh
+echo "if [ ! -f ./iotivity-lite/apps/simpleserver_windows.c_org ]; then" >> gen.sh
 echo "  # keep the original file for the windows solution, but do this only once" >> gen.sh
 echo "  cp ./iotivity-lite/apps/simpleserver_windows.c ./iotivity-lite/apps/simpleserver_windows.c_org" >> gen.sh
 echo "fi" >> gen.sh
-echo "# copy over the file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/simpleserver_windows.c" >> gen.sh
+echo "#" >> gen.sh
+echo "# copying source code to compile location clo(windows)" >> gen.sh
+echo "if [ ! -f ./iotivity-lite/apps/cloud_server.c_org ]; then" >> gen.sh
+echo "  # keep the original file for the windows solution, but do this only once" >> gen.sh
+echo "  cp ./iotivity-lite/apps/cloud_server.c ./iotivity-lite/apps/cloud_server.c_org" >> gen.sh
+echo "fi" >> gen.sh
+echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/cloud_server.c" >> gen.sh
+echo "#" >> gen.sh
 echo "# copy over the IDD file of the windows solution" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-lite/include/server_introspection.dat.h " >> gen.sh
+echo "#" >> gen.sh
+echo "# create the pki include file (if it does not exist)" >> gen.sh
 echo "if [ ! -f ./pki_certs.zip ]; then" >> gen.sh
 echo "# only create when the file does not exist" >> gen.sh
 echo "#sh ./pki.sh " >> gen.sh
 echo "sh ./pki.sh" >> gen.sh
 echo "echo \" \" ">> gen.sh
 echo "fi"  >> gen.sh
-
 #
 # create the pki generation script, on the top level folder
 #
-
 echo "#!/bin/bash" > pki.sh
-
-
 echo "# website: https://pki.openconnectivity.org/ocfTestCerts/" >> pki.sh
 echo "# command to create the PKI zip file :" >> pki.sh
 echo "# curl -d \"cn=Common Name&org=Member Organization&major=2&minor=0&build=1&baseline0=off&black0=on&blue0=on&purple0=on&devName=Device Name&devMfr=Device Manufacturer&ianaPen=IANA Pen&model=CPL Model&version=CPL Version&secureBoot=off&hardwareStorage=on&mudUrl=https://www.domain.tld/resource\" -X POST https://pki.openconnectivity.org/ocfTestCerts/generateTestCert.jsp > CommonName.zip" >> pki.sh
@@ -194,9 +206,6 @@ done
 # go back to the current folder
 #
 cd $CURPWD
-
-#echo "making the example directory"
-#mkdir -p ../iotivity/examples/${code_path}
 
 #
 # add the build file
