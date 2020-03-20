@@ -38,7 +38,7 @@ Folder structure after everything is installed and code is generated:
         |         |
         |         |-- code   The generated code.
         |               |    the files will be copied to folder iotivity/examples/OCFDeviceBuilder
-        |               |- server.cpp
+        |               |- server.cpp                  <-- generated code, which will be copied
         |               |- server_security.dat         SVR data
         |               |- server_introspection.dat.h  introspection device data, encoded in header file
         |
@@ -322,6 +322,11 @@ e.g. run in the iotivity-lite/port/linux folder the ```make -f devbuildmake devi
 
 To build another port (e.g. OS):
 - uncomment out the listed port in the script, and comment out the default linux.
+
+To build clean edit the file and comment out the line with __make clean__.
+
+to build for cloud add on the command line CLOUD=1
+e.g.: __sh build.sh CLOUD=1__
 
 ## Run Code
 
