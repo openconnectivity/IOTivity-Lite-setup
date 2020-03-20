@@ -92,7 +92,7 @@ Based on visual studio community 2017, version 15.7.1
 
 The Initial flow is doing a generation (with the supplied example):
 1. [gen.sh](#generate-code)
-2. start up visual code/studio with the IOTivity-Constrained solution file (.sln)
+2. start up visual code/studio with the IOTivity-Lite solution file (.sln)
    note dependend on the use version of studio/code solution conversion will take place.
 3. retarget the solution, so that it actual builds
    tab -> Project -> Retarget solution
