@@ -144,14 +144,18 @@ echo "cp ./pki_certs.zip.h ./iotivity-lite/include//pki_certs.h " >> manufacture
 # create the build script, on the top level folder
 #
 echo "#!/bin/bash" > build.sh
+echo "# script to build the target" >> build.sh
+echo "# can accept arguments like TCP=1 CLOUD=1 CLIENT=1" >> build.sh
 echo "cd iotivity-lite/port/linux/" >> build.sh
 echo "#comment out one of the next lines to build another port" >> build.sh
 for d in ./iotivity-lite/port/*/ ; do
     echo "#cd $d" >> build.sh
 done
+echo "#uncomment next line for having a clean build" >> build.sh
+echo "#make clean" >> build.sh
 echo "#uncomment next line for building the debug version" >> build.sh
-echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server" >> build.sh
-echo "make -f devbuildmake DYNAMIC=1 device_builder_server" >> build.sh
+echo "#make -f devbuildmake DYNAMIC=1 DEBUG=1 device_builder_server $1 $2 $3" >> build.sh
+echo "make -f devbuildmake DYNAMIC=1 device_builder_server $1 $2 $3" >> build.sh
 echo "cd ../../.." >> build.sh
 #
 # create the edit code script, on the top level folder
