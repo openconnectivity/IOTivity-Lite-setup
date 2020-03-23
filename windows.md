@@ -21,6 +21,8 @@ Folder structure after everything is installed and code is generated:
         |        |-- apps
         |        |      |- simpleserver_windows.c            <--- generated code
         |        |      |- simpleserver_windows.c_org        <--- original application 
+        |        |      |- cloud_server.c                    <--- generated code
+        |        |      |- cloud_server.c_org                <--- original application 
         |        |
         |        |-- include
         |        |      |- server_introspection.dat.h         <--- generated introspection data
@@ -90,15 +92,21 @@ Based on visual studio community 2017, version 15.7.1
 
 The Initial flow is doing a generation (with the supplied example):
 1. [gen.sh](#generate-code)
-2. start up visual code/studio with the IOTivity-Constrained solution file (.sln)
+2. start up visual code/studio with the IOTivity-Lite solution file (.sln)
    note dependend on the use version of studio/code solution conversion will take place.
 3. retarget the solution, so that it actual builds
    tab -> Project -> Retarget solution
-4. set the SimpleServer as default target
+4. set the SimpleServer as start up project
    solution explorer -> SimpleServer -> Set as StartUp Project
 5. tab -> Build -> Build Solution
 6. tab -> Debug -> Start Debugging
    
+for building the cloud version of the generated code
+
+4. set the CloudServer as start up project
+   solution explorer -> SimpleServer -> Set as StartUp Project
+5. tab -> Build -> Build Solution
+6. tab -> Debug -> Start Debugging
 
 # visual studio
 See microsoft to install visual studion on your windows machine at:
