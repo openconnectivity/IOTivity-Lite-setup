@@ -87,6 +87,17 @@ The development flow is depicted the figure below:
         if one wants to keep that code as reference
 
 
+
+# Compile Flags
+To build with the generated introspection file the 
+precompile flag:
+```OC_IDD_API```
+must be disabled in the IoTivity-lite project.
+
+To remove the debugging disable the
+precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
+
+
 # Initial Flow
 Based on visual studio community 2017, version 15.7.1
 
