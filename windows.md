@@ -28,8 +28,8 @@ Folder structure after everything is installed and code is generated:
         |        |      |- server_introspection.dat.h         <--- generated introspection data
         |        |
         |        |-- port/windows/vs2015
-        |                          |- IoTivity-Constrained.vcxproj  <--- project file
-        |                          |- IoTivity-Constrained.sln      <--- solution file
+        |                          |- IoTivity-lite.vcxproj         <--- project file
+        |                          |- IoTivity-lite.sln             <--- solution file
         |                          |- SimpleClient.vcxproj          <--- project file <not used>
         |                          |- SimpleClient.sln              <--- solution file <not used>
         |                          |- SimpleServer.vcxproj          <--- project file
