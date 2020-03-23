@@ -372,4 +372,8 @@ see for more info on [security options](https://github.com/openconnectivity/IOTi
 Instructions to add your own models available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/adding_my_own_models.md).
 
 #  Windows Specific Instructions
+
+
+```NOTE: DOES NOT WORK OUT OF THE BOX```
+
 Windows specific instructions are available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md).

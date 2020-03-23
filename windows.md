@@ -53,6 +53,16 @@ The installDeviceBuilder script generates scripts in the folder above this repo.
 These scripts are convienent scripts, e.g. they are short cuts for entering the generation command.
     
     
+# Compile Flags
+To build with the generated introspection file the 
+precompile flag:
+```OC_IDD_API```
+**MUST be disabled** in the IoTivity-lite project.
+
+To remove the debugging disable the
+precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
+
+
 # development flow  
 
 The development flow is depicted the figure below:
@@ -87,15 +97,6 @@ The development flow is depicted the figure below:
         if one wants to keep that code as reference
 
 
-
-# Compile Flags
-To build with the generated introspection file the 
-precompile flag:
-```OC_IDD_API```
-must be disabled in the IoTivity-lite project.
-
-To remove the debugging disable the
-precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
 
 
 # Initial Flow
