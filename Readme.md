@@ -27,7 +27,9 @@ Note that installing git clients on windows installs a BASH shell script environ
 
 Note, Linux systems will be upgraded!
 
-Note use the following command to use the master (latest code) of Iotivity-Lite:
+
+
+Use the following command to use the master (latest code) of Iotivity-Lite:
 
 curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
 
