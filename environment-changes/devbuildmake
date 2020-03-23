@@ -2,8 +2,12 @@
 # to be used as top make file when calling make
 # make -f devbuildmake <targets>
 
+# use the generated include file for IDD information (i.e. override the default configuration)
+IDD=0 
+# use for building with cloud access
 #CLOUD=1
 
+# include standard make file
 include Makefile
 
 # typical addition of CFLAGS
