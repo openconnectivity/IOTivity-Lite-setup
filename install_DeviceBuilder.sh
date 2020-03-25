@@ -68,15 +68,21 @@ echo "  cp ./iotivity-lite/apps/simpleserver_windows.c ./iotivity-lite/apps/simp
 echo "fi" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/simpleserver_windows.c" >> gen.sh
 echo "#" >> gen.sh
-echo "# copying source code to compile location clo(windows)" >> gen.sh
+echo "# copying source code to compile location cloud(windows)" >> gen.sh
 echo "if [ ! -f ./iotivity-lite/apps/cloud_server.c_org ]; then" >> gen.sh
 echo "  # keep the original file for the windows solution, but do this only once" >> gen.sh
 echo "  cp ./iotivity-lite/apps/cloud_server.c ./iotivity-lite/apps/cloud_server.c_org" >> gen.sh
 echo "fi" >> gen.sh
 echo "cp ./device_output/code/simpleserver.c ./iotivity-lite/apps/cloud_server.c" >> gen.sh
 echo "#" >> gen.sh
-echo "# copy over the IDD file of the windows solution" >> gen.sh
+echo "# copy over the IDD header file of the windows solution" >> gen.sh
+echo "if [ ! -f ./iotivity-lite/include/server_introspection.dat.h_org ]; then" >> gen.sh
+echo "  # keep the original IDD header file, but do this only once" >> gen.sh
+echo "  cp ./iotivity-lite/include/server_introspection.dat.h ./iotivity-lite/include/server_introspection.dat.h_org" >> gen.sh
+echo "fi" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-lite/include/server_introspection.dat.h " >> gen.sh
+echo "# copy over the IDD data file in the windows solution folder" >> gen.sh
+echo "cp ./device_output/code/server_introspection.dat ./iotivity-lite/port/windows/vs2015/server_introspection.dat" >> gen.sh
 echo "#" >> gen.sh
 echo "# create the pki include file (if it does not exist)" >> gen.sh
 echo "if [ ! -f ./pki_certs.zip ]; then" >> gen.sh
