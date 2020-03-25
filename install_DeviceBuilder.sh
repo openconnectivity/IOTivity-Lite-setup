@@ -83,10 +83,10 @@ echo "fi" >> gen.sh
 echo "cp ./device_output/code/server_introspection.dat.h ./iotivity-lite/include/server_introspection.dat.h " >> gen.sh
 echo "# copy over the IDD data file in the windows solution folder" >> gen.sh
 echo "# mkdir x86/debug & release solution folder" >> gen.sh
-echo "mkdir -p ./iotivity-lite/port/windows/vs2015/x86/debug" >> gen.sh
-echo "mkdir -p ./iotivity-lite/port/windows/vs2015/x86/release" >> gen.sh
-echo "cp ./device_output/code/server_introspection.dat ./iotivity-lite/port/windows/vs2015/x86/debug/server_introspection.cbor" >> gen.sh
-echo "cp ./device_output/code/server_introspection.dat ./iotivity-lite/port/windows/vs2015/x86/release/server_introspection.cbor" >> gen.sh
+echo "mkdir -p ./iotivity-lite/port/windows/vs2015/x64/Debug" >> gen.sh
+echo "mkdir -p ./iotivity-lite/port/windows/vs2015/x64/Release" >> gen.sh
+echo "cp ./device_output/code/server_introspection.dat ./iotivity-lite/port/windows/vs2015/x64/Debug/server_introspection.cbor" >> gen.sh
+echo "cp ./device_output/code/server_introspection.dat ./iotivity-lite/port/windows/vs2015/x64/Release/server_introspection.cbor" >> gen.sh
 echo "#" >> gen.sh
 echo "# create the pki include file (if it does not exist)" >> gen.sh
 echo "if [ ! -f ./pki_certs.zip ]; then" >> gen.sh
