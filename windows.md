@@ -28,8 +28,8 @@ Folder structure after everything is installed and code is generated:
         |        |      |- server_introspection.dat.h         <--- generated introspection data
         |        |
         |        |-- port/windows/vs2015
-        |                          |- IoTivity-Constrained.vcxproj  <--- project file
-        |                          |- IoTivity-Constrained.sln      <--- solution file
+        |                          |- IoTivity-lite.vcxproj         <--- project file
+        |                          |- IoTivity-lite.sln             <--- solution file
         |                          |- SimpleClient.vcxproj          <--- project file <not used>
         |                          |- SimpleClient.sln              <--- solution file <not used>
         |                          |- SimpleServer.vcxproj          <--- project file
@@ -53,6 +53,16 @@ The installDeviceBuilder script generates scripts in the folder above this repo.
 These scripts are convienent scripts, e.g. they are short cuts for entering the generation command.
     
     
+# Compile Flags
+To build with the generated introspection file the 
+precompile flag:
+```OC_IDD_API```
+**MUST be disabled** in the IoTivity-lite project.
+
+To remove the debugging disable the
+precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
+
+
 # development flow  
 
 The development flow is depicted the figure below:
@@ -85,6 +95,8 @@ The development flow is depicted the figure below:
         Note: if gen.sh is run again, the generated code is overwritten.
         e.g. before running that tool again, safe the file in the iotivivty tree to another name 
         if one wants to keep that code as reference
+
+
 
 
 # Initial Flow

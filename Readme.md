@@ -27,6 +27,12 @@ Note that installing git clients on windows installs a BASH shell script environ
 
 Note, Linux systems will be upgraded!
 
+
+
+Use the following command to use the master (latest code) of Iotivity-Lite:
+
+curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
+
 ## Folder Structure After Installation
 Folder structure after everything is installed and code is generated:
     
@@ -366,4 +372,8 @@ see for more info on [security options](https://github.com/openconnectivity/IOTi
 Instructions to add your own models available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/adding_my_own_models.md).
 
 #  Windows Specific Instructions
+
+
+```NOTE: DOES NOT WORK OUT OF THE BOX```
+
 Windows specific instructions are available are [here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/windows.md).
