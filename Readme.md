@@ -4,7 +4,7 @@ This repo contains bash scripts to setup a build enviroment to use DeviceBuilder
 The build enviroment is taylored to create OCF Server Devices.
 
 The script setup the next repos (from github) in the folders:
-- iotivity-lite (OCF 2.0 version): label: 2.1.1-RC0
+- iotivity-lite (OCF 2.0 version): label: 2.1.1-RC1
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
 
