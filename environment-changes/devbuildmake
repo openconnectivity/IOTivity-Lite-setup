@@ -2,8 +2,10 @@
 # to be used as top make file when calling make
 # make -f devbuildmake <targets>
 
-# use the generated include file for IDD information (i.e. override the default configuration)
-IDD=0 
+# default use the folder and read the IDD file 
+# uncomment the following line to use the generated include file for IDD information
+#IDD=0 
+
 # use for building with cloud access
 #CLOUD=1
 
