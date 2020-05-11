@@ -1,12 +1,28 @@
-# IOTivity-lite on windows
+# IOTivity-lite on Windows
 
+## Introduction
 
-Installation of IOTivity-Lite as indicated in Readme.md
+Explanation of how to use Visual Studio to build and run the generated application.
 
-Folder structure after everything is installed and code is generated:
-    
+## Table of Contents
+
+- [IOTivity-lite on Windows](#iotivity-lite-on-windows)
+  - [Introduction](#introduction)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Compile Flags](#compile-flags)
+  - [Development flow](#development-flow)
+  - [Initial Flow](#initial-flow)
+  - [Installation of visual studio](#installation-of-visual-studio)
+
+## Installation
+
+Installation of IoTivity-Lite as indicated in the [main flow](/IOTivity-Lite-setup/).
+
+Folder structure after everything is installed and the code is generated:
+
     ~/iot-lite        
-        |-- core             core resource definitions (in swagger) 
+        |-- core             core resource definitions (in swagger)
         |-- DeviceBuilder    The device builder tool chain
         |-- device_output    The output of device builder.
         |         |
@@ -28,12 +44,11 @@ Folder structure after everything is installed and code is generated:
         |        |      |- server_introspection.dat.h         <--- generated introspection data
         |        |
         |        |-- port/windows/vs2015
-        |                          |- IoTivity-lite.vcxproj         <--- project file
-        |                          |- IoTivity-lite.sln             <--- solution file
-        |                          |- SimpleClient.vcxproj          <--- project file <not used>
-        |                          |- SimpleClient.sln              <--- solution file <not used>
-        |                          |- SimpleServer.vcxproj          <--- project file
-        |                          |- SimpleServer.sln              <--- solution file
+        |                          |- IoTivity-lite.vcxproj   <--- project file
+        |                          |- IoTivity-lite.sln       <--- solution file (load this file)
+        |                          |- SimpleClient.vcxproj    <--- project file 
+        |                          |- SimpleServer.vcxproj    <--- project file
+        |                          |- ...
         |                   
         |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
         |-- IOTivity-Lite-setup   This github repo.
@@ -47,23 +62,17 @@ Folder structure after everything is installed and code is generated:
                   |-- folder/subfolder
                   |- file
 
-        
-        
 The installDeviceBuilder script generates scripts in the folder above this repo.
-These scripts are convienent scripts, e.g. they are short cuts for entering the generation command.
-    
-    
-# Compile Flags
+These scripts are convienent scripts, e.g. they are short cuts for entering the generation command. Note that the scripts contain linux based commands, thus build and run will not work.
+
+## Compile Flags
+
 To build with the generated introspection file the 
-precompile flag:
-```OC_IDD_API```
-**MUST be disabled** in the IoTivity-lite project.
+precompile flag ```OC_IDD_API``` **MUST be disabled** in the IoTivity-lite project.
 
-To remove the debugging disable the
-precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
+To remove the debugging disable the precompile flag ```OC_DEBUG``` in the IoTivity-lite project.
 
-
-# development flow  
+## Development flow  
 
 The development flow is depicted the figure below:
 
@@ -96,31 +105,28 @@ The development flow is depicted the figure below:
         e.g. before running that tool again, safe the file in the iotivivty tree to another name 
         if one wants to keep that code as reference
 
+## Initial Flow
 
-
-
-# Initial Flow
 Based on visual studio community 2017, version 15.7.1
 
 The Initial flow is doing a generation (with the supplied example):
-1. [gen.sh](#generate-code)
-2. start up visual code/studio with the IOTivity-Lite solution file (.sln)
+1 [gen.sh](#generate-code)
+2 start up visual code/studio with the IoTivity-Lite solution file (.sln)
    note dependend on the use version of studio/code solution conversion will take place.
-3. retarget the solution, so that it actual builds
+3 retarget the solution, so that it actual builds
    tab -> Project -> Retarget solution
-4. set the SimpleServer as start up project
+4 set the SimpleServer as start up project
    solution explorer -> SimpleServer -> Set as StartUp Project
-5. tab -> Build -> Build Solution
-6. tab -> Debug -> Start Debugging
-   
-for building the cloud version of the generated code
+5 tab -> Build -> Build Solution
+6 tab -> Debug -> Start Debugging
 
-4. set the CloudServer as start up project
+For building the cloud version of the generated code replace steps 4-6 with the steps below.
+
+4 set the CloudServer as start up project
    solution explorer -> SimpleServer -> Set as StartUp Project
-5. tab -> Build -> Build Solution
-6. tab -> Debug -> Start Debugging
+5 tab -> Build -> Build Solution
+6 tab -> Debug -> Start Debugging
 
-# visual studio
-See microsoft to install visual studion on your windows machine at:
+## Installation of visual studio
 
-https://visualstudio.microsoft.com/vs/community/
+See [microsoft](https://visualstudio.microsoft.com/vs/community/) to install visual studio (community edition) on your windows machine.
