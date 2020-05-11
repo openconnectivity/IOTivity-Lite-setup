@@ -221,7 +221,7 @@ These steps needs to be executed in the __&lt;&gt;/iot-lite__ folder,
 e.g. the folder that gets created by running the curl installation command.
 The goal is to run an OCF server by creating code, building and running the OCF server application.
 
-1 [gen.sh](#generate-code)
+1. [gen.sh](#generate-code)
  Script to generate the code that represents the device.
     The input is the file used to generate the code is __example.json__.
 2. [build.sh](#build-code)
