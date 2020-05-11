@@ -7,7 +7,7 @@ The build enviroment is taylored to create OCF Server Devices.
 
 The script setup the next repos (from github) in the folders:
 
-- iotivity-lite (OCF 2.0 version): label: 2.1.1-RC1
+- IoTivity-Lite (OCF 2.0 version): label: 2.1.1-RC1
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
 
@@ -62,8 +62,9 @@ Note that installing git clients on windows installs a BASH shell script environ
 Note, Linux systems will be upgraded!
 
 Use the following command to use the master (latest code) of Iotivity-Lite:
-
+```
 curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
+```
 
 ## Folder Structure After Installation
 
