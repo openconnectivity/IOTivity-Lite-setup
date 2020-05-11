@@ -6,6 +6,7 @@ This repo contains bash scripts to setup a build enviroment to use DeviceBuilder
 The build enviroment is taylored to create OCF Server Devices.
 
 The script setup the next repos (from github) in the folders:
+
 - iotivity-lite (OCF 2.0 version): label: 2.1.1-RC1
 - DeviceBuilder (latest version)
 - IOTDataModels (latest version) resource definitions that are used as input for the code generation
@@ -60,7 +61,6 @@ Note that installing git clients on windows installs a BASH shell script environ
 
 Note, Linux systems will be upgraded!
 
-
 Use the following command to use the master (latest code) of Iotivity-Lite:
 
 curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
@@ -107,13 +107,11 @@ Folder structure after everything is installed and code is generated:
         |- edit_code.sh      edits the iotivity-lite/apps/device_builder_server.cpp file with nano.
         |- edit_input.sh     edits the example.json file with nano.
         |- example.json      the input for device builder scripts.
-            
-            
+                 
      legenda:  folder
                   |-- folder
                   |-- folder/subfolder
                   |- file
-
 
 The installDeviceBuilder script generates scripts in the top level folder (e.g. the folder above this repo).
 The generated scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
@@ -143,9 +141,9 @@ Where:
 - OCF Server = is the device that is being used to build the OCF server
   - Linux PC or Raspberry Pi
 - OCF Client = device used to run the OCF Client (OTGC)
- 	- Linux PC (build your own on target PC)
- 	- Raspberry Pi (build your own on a PI)
-	- Android Phone (OTGC as pre-build apk available)
+  - Linux PC (build your own on target PC)
+  - Raspberry Pi (build your own on a PI)
+  - Android Phone (OTGC as pre-build apk available)
 
 see for options on [OTGC](https://openconnectivityfoundation.github.io/development-support/otgc)
 Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
@@ -154,14 +152,14 @@ is a lower level OCF client where the user needs to interact with the device on 
 
 ## Referenced Information
 
-| repo  |  description |
+| website | repo  |  description |
 | ----- | ----- |
-| [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
-| [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
-| [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
-| [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) |  [oneIOTa](https://oneiota.org)  |
-| [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
-| [OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
+| [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/)  [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
+| [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
+| [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
+| [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) |  [oneIOTa](https://oneiota.org)  |
+| core        | [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
+| [OCF clients](https://openconnectivityfoundation.github.io/development-support)          |[OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
 
 ## Development Flow
 
@@ -248,7 +246,7 @@ then run the script [reset.sh](#reset-device)
 
 ### OCF clients
 
-Information and Installers about the OCF clients for development support can be found [here](https://github.com/openconnectivityfoundation/development-support)
+Information and Installers about the OCF clients for development support can be found [here](https://openconnectivityfoundation.github.io/development-support)
 
 ## Scripts
 
@@ -309,7 +307,7 @@ The following mechanisms are available to change the device type:
 
 #### changing the name of the OCF Server
 
-The name can be change to something different. 
+The name can be change to something different.
 This can be done by giving an input parameter to gen.sh.
 for example gen.sh blahblah will turn the name of the server into "blahblah".
 Default the name of the device is "server_lite_&lt;PID&gt;", the PID is the current process number of the script.
