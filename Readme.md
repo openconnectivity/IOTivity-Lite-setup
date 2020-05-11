@@ -155,7 +155,7 @@ is a lower level OCF client where the user needs to interact with the device on 
 
 | website | repo  |  description |
 | ----- | ----- |
-| [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/)  [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
+| [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
 | [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
 | [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) |  [oneIOTa](https://oneiota.org)  |
