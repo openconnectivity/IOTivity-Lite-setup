@@ -391,12 +391,12 @@ script: **pki.sh**
 
 This script creates PKI based certificates and converts them into an header file so that they are used in the code.
 
-see for more info on [security options](/IOTivity-Lite-setup/security.md)
+see for more info on [security options](/IOTivity-Lite-setup/security)
 
 ## Adding your own models
 
-Instructions to add your own models available are [here](/IOTivity-Lite-setup//adding_my_own_models.md).
+Instructions to add your own models available are [here](/IOTivity-Lite-setup//adding_my_own_models).
 
 ## Windows Specific Instructions
 
-Windows specific instructions are available are [here](/IOTivity-Lite-setup/windows.md).
+Windows specific instructions are available are [here](/IOTivity-Lite-setup/windows).
