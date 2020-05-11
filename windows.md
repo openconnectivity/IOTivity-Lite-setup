@@ -110,22 +110,22 @@ The development flow is depicted the figure below:
 Based on visual studio community 2017, version 15.7.1
 
 The Initial flow is doing a generation (with the supplied example):
-1. [gen.sh](#generate-code)
-2. start up visual code/studio with the IoTivity-Lite solution file (.sln)
+1. [gen.sh](/IOTivity-Lite-setup#generate-code)
+2. Start up visual code/studio with the IoTivity-Lite solution file (.sln)
    note dependend on the use version of studio/code solution conversion will take place.
-3. retarget the solution, so that it actual builds
+3. Retarget the solution, so that it actual builds
    tab -> Project -> Retarget solution
-4. set the SimpleServer as start up project
+4. Set the SimpleServer as start up project
    solution explorer -> SimpleServer -> Set as StartUp Project
-5. tab -> Build -> Build Solution
-6. tab -> Debug -> Start Debugging
+5. Tab -> Build -> Build Solution
+6. Tab -> Debug -> Start Debugging
 
 For building the cloud version of the generated code replace steps 4-6 with the steps below.
 
-4. set the CloudServer as start up project
+4. Set the CloudServer as start up project
    solution explorer -> SimpleServer -> Set as StartUp Project
-5. tab -> Build -> Build Solution
-6. tab -> Debug -> Start Debugging
+5. Tab -> Build -> Build Solution
+6. Tab -> Debug -> Start Debugging
 
 ## Installation of visual studio
 
