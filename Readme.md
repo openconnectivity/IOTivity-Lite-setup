@@ -124,19 +124,6 @@ Typical development setup contains the following configuration:
 
 ![Development setup](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://openconnectivity.github.io/IOTivity-Lite-setup/data/development-setup.puml)
 
-              ----------------        
-             | (dev system)   |             
-             |  OCF server    |              
-              ---------------- 
-                     |
-                wired|wifi
-                     |
-               --------------            ------------------             
-              |              |   wifi   |                  |
-    Internet--|    router    |--------- |  (test system)   |
-              |              |          | OCF Client (OTGC)| 
-               --------------            ------------------         
-
 Where:
 
 - Router = home router, with Wifi Access point to connect the Android device
@@ -155,8 +142,8 @@ is a lower level OCF client where the user needs to interact with the device on 
 
 ## Referenced Information
 
-| website | repo  |  description |
-| ----- | ----- |
+| Website | Repo  |  Description |
+| ----- | ----- | ----- |
 | [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
 | [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
@@ -170,56 +157,6 @@ The development flow is based on bash scripts, hence the flow is generalized for
 The development flow is depicted the figure below:
 
 ![Development process](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://openconnectivity.github.io/IOTivity-Lite-setup/data/development-process.puml)
-
-
-
-                   start
-                     |       
-                     v
-               --------------                  
-              |              |     
-              | edit_input.sh|             --- edit the input file for the code generation
-              |              |                 default file contains the binary switch resource
-               -------------- 
-                     |
-                     |       
-                     v
-               --------------
-              |              |
-              |    gen.sh    |             ---  generates the code & introspection file
-              |              |             --- script contains the device type, 
-               --------------                  change the argument to change the device type.
-                     |
-                     | initial code        --- in iotivity-lite tree, to build
-                     v                     --- introspection header files
-               --------------                  
-              |              |     
-              | edit_code.sh |<--------    --- edit the generated code
-              |              |         |
-               --------------          |
-                     |                 |
-                     | edited code     |
-                     v                 |
-               --------------          |
-              |              |  build  |
-              |   build.sh   |---->----|   --- build the executable
-              |              |  failed |
-               --------------          |
-                     |                 |
-                     | ok              |
-                     v                 |
-               --------------          |
-    run       |              | modify  |
-    --------->|    run.sh    |---->----      --- onboarding will change the security folder 
-    clients   |              | behaviour         in the executable folder
-    against    --------------                    to refresh/reset the security status execute reset.sh
-    application      |
-                     v
-                  finished
-                 
-        Note: if gen.sh is run again, the generated code is overwritten.
-        e.g. before running that tool again, safe the file in the iotivivty tree to another name 
-        if one wants to keep that code as reference
 
 ## Initial Flow
 
