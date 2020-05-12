@@ -1,0 +1,15 @@
+@startuml
+ditaa
+             +----------------+      
+             | (dev system)   |             
+             |  OCF server    |              
+             +-------+--------+
+                     |
+                     |wired/Wifi
+                     |
+              +------+-------+          +------------------+            
+              |              |   Wifi   |                  |
+    Internet--+    router    +----------+  (test system)   |
+              |              |          | OCF Client (OTGC)| 
+              +--------------+          +------------------+  
+@enduml
