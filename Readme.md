@@ -122,7 +122,7 @@ For more advanced usage, use the commands in the scrips itself, it allows for mo
 
 Typical development setup contains the following configuration:
 
-![Development setup](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-setup.puml)
+![Development setup](https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-setup.png)
 
 Where:
 
@@ -156,7 +156,7 @@ is a lower level OCF client where the user needs to interact with the device on 
 The development flow is based on bash scripts, hence the flow is generalized for Linux based systems.
 The development flow is depicted the figure below:
 
-![Development process](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-process.puml)
+![Development process](https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-process.png)
 
 ## Initial Flow
 
