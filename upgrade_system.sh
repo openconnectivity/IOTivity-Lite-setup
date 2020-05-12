@@ -19,30 +19,8 @@ set -x #echo on
 #############################
 
 #
-# create target folder, e.g. where all the repo and code will be stored
+# system update
 #
-mkdir iot-lite
-#
-# go to the created folder
-#
-cd iot-lite
-
-# make sure that git is there, because the scripts are using git.
-# nano and automake are needed for artik boards
-sudo apt-get -y install git nano automake 
-#
-# clone the repo with all the scripts
-#
-git clone https://github.com/openconnectivity/IOTivity-Lite-setup.git
-#
-# go to the folder where the installation scripts are downloaded
-#
-cd IOTivity-Lite-setup
-#
-# install IOTivity-Lite, TAG=2.0.5  2.1.1-RC0 2.1.1-RC1
-#
-sh install_IOTivity-lite.sh 2.1.1-RC1
-#
-# install device builder repo
-#
-sh install_DeviceBuilder.sh
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y update

@@ -5,18 +5,13 @@
 This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
 The build enviroment is taylored to create OCF Server Devices.
 
-The script setup the next repos (from github) in the folders:
-
-- IoTivity-Lite (OCF 2.0 version): label: 2.1.1-RC1
-- DeviceBuilder (latest version)
-- IOTDataModels (latest version) resource definitions that are used as input for the code generation
-
 ## Table of Contents
 
 - [IOTivity-lite setup](#iotivity-lite-setup)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
+  - [Tool chain](#tool-chain)
   - [Folder Structure After Installation](#folder-structure-after-installation)
   - [Development Setup](#development-setup)
   - [Referenced Information](#referenced-information)
@@ -54,17 +49,31 @@ If one wants to know the details of what the script does:
 
 Executing the installation command requires:
 
-- internet access
-- system that contains the BASH shell script environment.
+- Internet access
+- System that contains the BASH shell script environment.
 
-Note that installing git clients on windows installs a BASH shell script environment
-
-Note, Linux systems will be upgraded!
+Note that installing a [git client](https://git-scm.com/downloads) on windows installs a BASH shell script environment.
 
 Use the following command to use the master (latest code) of Iotivity-Lite:
 ```
 curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
 ```
+
+## Tool chain
+
+The following tool chain is created:
+![ToolChain](https://openconnectivityfoundation.github.io/DeviceBuilder/data/toolchain.png)
+
+- [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/)
+  Merges all input resources to a single file, stripping out unwanted properties, methods, etc.
+  Input is conveyed via input file.
+  Output is swagger2.0 files containing all resources that needs to be generated in code.
+- [swagger2x](https://openconnectivityfoundation.github.io/swagger2x/)
+  Creates from the output swagger file the C code.
+- [swag2cbor](https://openconnectivityfoundation.github.io/DeviceBuilder/)
+  Creates from the (JSON) swagger file the cbor equivalent.
+- [cbor2inc](https://openconnectivityfoundation.github.io/DeviceBuilder/)
+  Creates from a cbor file a C style header file.
 
 ## Folder Structure After Installation
 
@@ -146,8 +155,8 @@ is a lower level OCF client where the user needs to interact with the device on 
 | ----- | ----- | ----- |
 | [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
-| [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  C code (latest)   |
-| [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) |  [oneIOTa](https://oneiota.org)  |
+| [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  OCF Core Framework  |
+| [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) | website: [oneIOTa](https://oneiota.org)  |
 | core        | [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
 | [OCF clients](https://openconnectivityfoundation.github.io/development-support)          |[OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
 
@@ -204,7 +213,9 @@ Typical changes on the input file for code generation can be:
 - adding/changing resources.
 - removal of **optional** properties on the resource.
 - removal of the UPDATE method (e.g. POST).
+  
 Things to check:
+
 - do not remove mandatory features from a resource
 - make sure that if an UPDATE method is removed, also change the supported inteface (if)
 
@@ -233,7 +244,7 @@ script: **gen.sh**
 
 This script runs the DeviceBuilder application with the predefined arguments:
 
-- iot-lite/example.json as input file.
+- &lt;&gt;/iot-lite/example.json as input file.
 - light device as device type.
 
 #### changing the device type of the OCF Server
@@ -270,7 +281,7 @@ more info of the DeviceBuilder script can be found [here](https://github.com/ope
 script: **edit_code.sh**
 
 This scripts edits the generated C code __device_builder_server.c__ with [Nano](#nano).
-The script loads the Nano editor with the generated code in the IOTivity tree.
+The script loads the Nano editor with the generated code in the IoTivity-Lite tree.
 The saved file can be compiled without copy pasting.
 
 **Note that running gen.sh will overwrite the made changes!!**
