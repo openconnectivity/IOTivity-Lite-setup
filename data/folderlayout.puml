@@ -1,0 +1,71 @@
+@startuml
+ditaa
+
+    ~/iot-lite   
+        |     
+        +--- core             core Resource Type definitions (in swagger) 
+        |
+        +--- DeviceBuilder    The device builder tool chain
+        |                     merging OAS2.0 files into 1 large OAS2.0 file for code generation
+        |
+        +--- device_output    The output of device builder
+        |         |
+        |         +--- code   The generated code.
+        |               |     the files will be copied to folder iotivity/examples/OCFDeviceBuilder
+        |               |
+        |               +- server.cpp                         <--- Generated code, which will be copied
+        |               |
+        |               +- server_security.dat                <--- SVR data
+        |               |
+        |               +- server_introspection.dat.h         <--- Introspection device data, encoded in header file
+        |
+        +--- iotivity-lite                                    <--- IoTivity Lite source code tree
+        |        | 
+        |        +--- apps
+        |        |      |
+        |        |      +- device_builder_server.c            <--- Generated code                  
+        |        |
+        |        +--- include
+        |        |      |
+        |        |      +- server_introspection.dat.h         <--- Generated introspection data      
+        |        |
+        |        +--- port/(portinglayer)
+        |                     |
+        |                     +- device_builder_server        <--- Executable (after creation on linux)
+        |                     |
+        |                     +- devbuildmake                 <--- Makefile with the target
+        |                     |
+        |                     +- Makefile                     <--- Original make file from IoTivity_lite
+        |                     |
+        |                     +- device_builder_server_creds  <--- SVR storage 
+        |                                                          when the folder is not there has the meaning: 
+        |                                                          The device is ready for onboarding
+        |                   
+        +--- IoTDataModels        <--- Resource Type definitions (in OAS2.0 format)
+        |
+        +--- IOTivity-Lite-setup  <--- This github repo
+        |
+        +--- swagger2x            <--- Code generation tool, converting OAS2.0 into code
+        |
+        +- gen.sh                 <--- Generation command to convert the example.json in to code
+        |
+        +- build.sh               <--- Building the generated code
+        |
+        +- run.sh                 <--- Run the generated code
+        |
+        +- reset.sh               <--- Reset the device to ready for onboarding state
+        |
+        +- edit_code.sh           <--- Edits the iotivity-lite/apps/device_builder_server.cpp file with nano
+        |
+        +- edit_input.sh          <--- Edits the example.json file with nano
+        |
+        +- example.json           <--- The input for device builder scripts
+                 
+
+     legenda:  Folder
+                  |
+                  +--- Folder
+                  +--- Folder/Subfolder
+                  +- File
+
+@enduml

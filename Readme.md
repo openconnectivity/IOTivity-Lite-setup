@@ -78,51 +78,7 @@ The following tool chain is created:
 ## Folder Structure After Installation
 
 Folder structure after everything is installed and code is generated:
-
-    ~/iot-lite        
-        |-- core             core resource definitions (in swagger) 
-        |-- DeviceBuilder    The device builder tool chain
-        |                    merging OAS2.0 files into 1 large OAS2.0 file for code generation
-        |-- device_output    The output of device builder.
-        |         |
-        |         |-- code   The generated code.
-        |               |    the files will be copied to folder iotivity/examples/OCFDeviceBuilder
-        |               |- server.cpp                  <-- generated code, which will be copied
-        |               |- server_security.dat         SVR data
-        |               |- server_introspection.dat.h  introspection device data, encoded in header file
-        |
-        |-- iotivity-lite         IOTivity Lite source code
-        |        | 
-        |        |-- apps
-        |        |      |- device_builder_server.c            <--- generated code
-        |        |
-        |        |-- include
-        |        |      |- server_introspection.dat.h         <--- generated introspection data
-        |        |
-        |        |-- port/<portinglayer>
-        |                     |- device_builder_server        <--- executable (after creation on linux)
-        |                     |- devbuildmake                 <--- makefile with the target
-        |                     |- Makefile                     <--- original make file from IOTivity_lite
-        |                     |- device_builder_server_creds  <--- SVR storage 
-        |                                                          when the folder is not there has the meaning: 
-        |                                                          The device is ready for onboarding
-        |                   
-        |-- IoTDataModels    oneIOTa resource definitions (in OAS2.0 format)
-        |-- IOTivity-Lite-setup   This github repo.
-        |-- swagger2x        code generation tool, converting OAS2.0 into code
-        |- gen.sh            generation command to convert the example.json in to code
-        |- build.sh          building the generated code
-        |- run.sh            run the generated code
-        |- reset.sh          reset the device to ready for onboarding state.
-        |- edit_code.sh      edits the iotivity-lite/apps/device_builder_server.cpp file with nano.
-        |- edit_input.sh     edits the example.json file with nano.
-        |- example.json      the input for device builder scripts.
-                 
-     legenda:  folder
-                  |-- folder
-                  |-- folder/subfolder
-                  |- file
-
+![Folder](https://openconnectivity.github.io/IOTivity-Lite-setup/data/folderlayout.png)
 The installDeviceBuilder script generates scripts in the top level folder (e.g. the folder above this repo).
 The generated scripts are convienent scripts, e.g. they are short cuts for entering generation, build, excute and reset commands.
 For more advanced usage, use the commands in the scrips itself, it allows for more flexibility in the development process.
@@ -130,9 +86,7 @@ For more advanced usage, use the commands in the scrips itself, it allows for mo
 ## Development Setup
 
 Typical development setup contains the following configuration:
-
 ![DevelopmentSetup](https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-setup.png)
-
 Where:
 
 - Router = home router, with Wifi Access point to connect the Android device
