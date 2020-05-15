@@ -15,8 +15,8 @@ ditaa
               |              |          |                   |
               |              |  Wifi    |   Test System     |
     Internet--+    Router    +----------+                   |
-              |              |          |                   | 
+              |              |          |       OCF         | 
               |              |          | Onboarding Tool & | 
-              |              |          |     Client        | 
+              |              |          |  Generic Client   | 
               +--------------+          +-------------------+  
 @enduml

@@ -87,21 +87,23 @@ For more advanced usage, use the commands in the scrips itself, it allows for mo
 
 Typical development setup contains the following configuration:
 ![DevelopmentSetup](https://openconnectivity.github.io/IOTivity-Lite-setup/data/dev-setup.png)
+
 Where:
 
 - Router = home router, with Wifi Access point to connect the Android device
-- The IP network should be IPv6 capable and have CoAP multicast enabled.
+  The IP network should be IPv6 capable and have CoAP multicast enabled.
 - OCF Server = is the device that is being used to build the OCF server
-  - Linux PC or Raspberry Pi
-- OCF Client = device used to run the OCF Client (OTGC)
-  - Linux PC (build your own on target PC)
-  - Raspberry Pi (build your own on a PI)
-  - Android Phone (OTGC as pre-build apk available)
+  - This can be a development machine: Linux PC, Windows PC, Raspberry Pi, ..
+- Test system, to run an Onboarding Tool and Generic Client (OTGC)
+  - to interact with the OCF server securely, the device needs to be onboarded to the secure domain. This is the function of the Onboarding Tool. OTGC has the Onboarding Tool integrated with a Generic Client. The Generic Client can interact with resources defined in the OCF server. OTGC runs on the following platforms:
+      - Linux PC (build your own on target PC)
+      - Raspberry Pi (build your own on a PI)
+      - Android Phone (OTGC as pre-build apk available)
+  - Note: If a windows PC is available [Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy) can be used.
 
-see for options on [OTGC](https://openconnectivityfoundation.github.io/development-support/otgc)
+See [here](https://openconnectivityfoundation.github.io/development-support/otgc) for more information on OTGC.
 Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
-[Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy)
-is a lower level OCF client where the user needs to interact with the device on JSON level.
+[Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy) is a lower level OCF client where the user needs to interact with the device on JSON level.
 
 ## Referenced Information
 
