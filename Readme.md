@@ -11,7 +11,7 @@ The build enviroment is taylored to create OCF Server Devices.
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
-  - [Tool chain](#tool-chain)
+  - [The Tool Chain](#the-tool-chain)
   - [Folder Structure After Installation](#folder-structure-after-installation)
   - [Development Setup](#development-setup)
   - [Referenced Information](#referenced-information)
@@ -37,43 +37,40 @@ The build enviroment is taylored to create OCF Server Devices.
 
 ## Installation
 
-Installation of the enviroment can be done with a single curl command:
+The local installation of the Tool Chain can be done with a single curl command:
 
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
-The curl command sets up the full environment (for Linux and Windows).
-
-If one wants to know the details of what the script does:
-```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh ``` or look 
-[here](https://github.com/openconnectivity/IOTivity-Lite-setup/blob/master/install.sh)
+The curl command sets up the Tool Chain on the (development) machine.
+The script installs various tools and github repositories that are needed to use the Tool Chain. For windows visual studio is needed as an extra installation step, see [here](#windows-specific-instructions) for Windows Specific additional instructions.
 
 Executing the installation command requires:
 
 - Internet access
 - System that contains the BASH shell script environment.
 
-Note that installing a [git client](https://git-scm.com/downloads) on windows installs a BASH shell script environment.
+Note that installing a [git client](https://git-scm.com/downloads) on Windows also installs a BASH shell script environment.
 
 Use the following command to use the master (latest code) of Iotivity-Lite:
 ```
 curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
 ```
 
-## Tool chain
+## The Tool Chain
 
-The following tool chain is created:
+The following Tool Chain is created:
 ![ToolChain](https://openconnectivityfoundation.github.io/DeviceBuilder/data/toolchain.png)
 
 - [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/)
   Merges all input resources to a single file, stripping out unwanted properties, methods, etc.
-  Input is conveyed via input file.
-  Output is swagger2.0 files containing all resources that needs to be generated in code.
+  The list of desired resources is conveyed via an input file.
+  The output are swagger2.0 files containing all resources that can be used to generated code and the IDD.
 - [swagger2x](https://openconnectivityfoundation.github.io/swagger2x/)
-  Creates from the output swagger file the C code.
+  Creates from the output swagger file the C application code, based on IoTivity-lite stack.
 - [swag2cbor](https://openconnectivityfoundation.github.io/DeviceBuilder/)
-  Creates from the (JSON) swagger file the cbor equivalent.
+  Creates from the (JSON) swagger file the IDD in CBOR.
 - [cbor2inc](https://openconnectivityfoundation.github.io/DeviceBuilder/)
-  Creates from a cbor file a C style header file.
+  Creates from the IDD CBOR file the C style header file containing the IDD information.
 
 ## Folder Structure After Installation
 
@@ -96,20 +93,21 @@ Where:
   - This can be a development machine: Linux PC, Windows PC, Raspberry Pi, ..
 - Test system, to run an Onboarding Tool and Generic Client (OTGC)
   - to interact with the OCF server securely, the device needs to be onboarded to the secure domain. This is the function of the Onboarding Tool. OTGC has the Onboarding Tool integrated with a Generic Client. The Generic Client can interact with resources defined in the OCF server. OTGC runs on the following platforms:
-      - Linux PC (build your own on target PC)
-      - Raspberry Pi (build your own on a PI)
-      - Android Phone (OTGC as pre-build apk available)
+    - Linux PC (build your own on target PC)
+    - Raspberry Pi (build your own on a PI)
+    - Android Phone (OTGC as pre-build apk available)
   - Note: If a windows PC is available [Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy) can be used.
 
 See [here](https://openconnectivityfoundation.github.io/development-support/otgc) for more information on OTGC.
-Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Client.
+
+Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Onboarding Tool and Client.
 [Device Spy](https://openconnectivityfoundation.github.io/development-support/DeviceSpy) is a lower level OCF client where the user needs to interact with the device on JSON level.
 
 ## Referenced Information
 
 | Website | Repo  |  Description |
 | ----- | ----- | ----- |
-| [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  tool chain  |
+| [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  Tool Chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
 | [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  OCF Core Framework  |
 | [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) | website: [oneIOTa](https://oneiota.org)  |
@@ -200,7 +198,7 @@ The nano beginners guide is available [here](https://www.howtogeek.com/howto/429
 
 Script: **gen.sh**
 
-This script runs the DeviceBuilder tool chain with the predefined arguments:
+This script runs the Tool Chain with the predefined arguments:
 
 - &lt;&gt;/iot-lite/example.json as input file.
 - light device as device type.
@@ -304,14 +302,15 @@ The device will go to the ready for onboarding state.
 
 Script: **pki.sh**
 
-This script creates PKI based certificates and converts them into an header file so that they are used in the code.
+This script creates PKI based certificates and converts them into an header file.
+The generated certificates are **TEST** certificates, these certificates are to be used for testing only.
 
 See [here](/IOTivity-Lite-setup/security) for more info on security options.
 
 ## Adding your own Resource models
 
-Instructions to add your own Resource models available are [here](/IOTivity-Lite-setup//adding_my_own_models).
+Instructions to add your own Resource models is available [here](/IOTivity-Lite-setup//adding_my_own_models).
 
 ## Windows Specific Instructions
 
-Windows specific instructions (using Visual Studio) are available are [here](/IOTivity-Lite-setup/windows).
+Windows specific instructions (using Visual Studio) is available [here](/IOTivity-Lite-setup/windows).
