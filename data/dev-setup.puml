@@ -1,15 +1,22 @@
 @startuml
 ditaa
-             +----------------+      
-             | (dev system)   |             
-             |  OCF server    |              
+             +----------------+    
+             |                |  
+             |  Development   |
+             |    System      |         Development setup
+             |                |
+             |   OCF server   |
+             |                |
              +-------+--------+
                      |
-                     |wired/Wifi
+                     | Wired/Wifi
                      |
-              +------+-------+          +------------------+            
-              |              |   Wifi   |                  |
-    Internet--+    router    +----------+  (test system)   |
-              |              |          | OCF Client (OTGC)| 
-              +--------------+          +------------------+  
+              +------+-------+          +-------------------+            
+              |              |          |                   |
+              |              |  Wifi    |   Test System     |
+    Internet--+    Router    +----------+                   |
+              |              |          |                   | 
+              |              |          | Onboarding Tool & | 
+              |              |          |     Client        | 
+              +--------------+          +-------------------+  
 @enduml
