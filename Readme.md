@@ -309,8 +309,8 @@ See [here](/IOTivity-Lite-setup/security) for more info on security options.
 
 ## Adding your own Resource models
 
-Instructions to add your own Resource models is available [here](/IOTivity-Lite-setup//adding_my_own_models).
+Instructions to add your own Resource models are available [here](/IOTivity-Lite-setup//adding_my_own_models).
 
 ## Windows Specific Instructions
 
-Windows specific instructions (using Visual Studio) is available [here](/IOTivity-Lite-setup/windows).
+Windows specific instructions (using Visual Studio) are available [here](/IOTivity-Lite-setup/windows).
