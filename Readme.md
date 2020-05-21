@@ -1,13 +1,13 @@
-# IOTivity-lite setup
+# IoTivity setup
 
 ## Introduction
 
-This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IOTivity-lite.
+This repo contains bash scripts to setup a build enviroment to use DeviceBuilder with IoTivity.
 The build enviroment is taylored to create OCF Server Devices.
 
 ## Table of Contents
 
-- [IOTivity-lite setup](#iotivity-lite-setup)
+- [IoTivity setup](#iotivity-setup)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
@@ -42,7 +42,7 @@ The local installation of the Tool Chain can be done with a single curl command:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
 The curl command sets up the Tool Chain on the (development) machine.
-The script installs various tools and github repositories that are needed to use the Tool Chain. For windows visual studio is needed as an extra installation step, see [here](#windows-specific-instructions) for Windows Specific additional instructions.
+The script installs various tools and github repositories that are needed to use the Tool Chain. For windows, visual studio is needed as an extra installation step, see [here](#windows-specific-instructions) for Windows Specific additional instructions.
 
 Executing the installation command requires:
 
@@ -66,7 +66,7 @@ The following Tool Chain is created:
   The list of desired resources is conveyed via an input file.
   The output are swagger2.0 files containing all resources that can be used to generated code and the IDD.
 - [swagger2x](https://openconnectivityfoundation.github.io/swagger2x/)
-  Creates from the output swagger file the C application code, based on IoTivity-lite stack.
+  Creates from the output swagger file the C application code, based on IoTivity stack.
 - [swag2cbor](https://openconnectivityfoundation.github.io/DeviceBuilder/)
   Creates from the (JSON) swagger file the IDD in CBOR.
 - [cbor2inc](https://openconnectivityfoundation.github.io/DeviceBuilder/)
@@ -109,7 +109,7 @@ Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Onboarding To
 | ----- | ----- | ----- |
 | [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  Tool Chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
-| [IoTivity-lite](https://iotivity.org)     | [IoTivity-lite](https://github.com/iotivity/iotivity-lite)     |  OCF Core Framework  |
+| [IoTivity](https://iotivity.org)     | [IoTivity](https://github.com/iotivity/iotivity-lite)     |  OCF Core Framework  |
 | [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) | website: [oneIOTa](https://oneiota.org)  |
 | core        | [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
 | [OCF clients](https://openconnectivityfoundation.github.io/development-support)          |[OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
@@ -237,7 +237,7 @@ More info of the DeviceBuilder script can be found [here](https://github.com/ope
 script: **edit_code.sh**
 
 This scripts edits the generated C code __device_builder_server.c__ with [Nano](#nano).
-The script loads the Nano editor with the generated code in the IoTivity-Lite tree.
+The script loads the Nano editor with the generated code in the iotivity-lite tree.
 The saved file can be compiled without copy pasting.
 
 **Note that running gen.sh will overwrite the made changes!!**
@@ -294,7 +294,7 @@ Script: **reset.sh**
 
 This script deletes the SVR settings in the security folder:
 
-&lt;&gt;/iotivity/port/linux/device_builder_server_creds
+&lt;&gt;/iotivity-lite/port/linux/device_builder_server_creds
 
 The device will go to the ready for onboarding state.
 
