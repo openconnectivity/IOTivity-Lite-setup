@@ -211,6 +211,8 @@ echo "#!/bin/bash"> reset.sh
 for d in ./iotivity-lite/port/*/ ; do
     echo "rm -rf ${d}device_builder_server_creds/*" >> reset.sh
 done
+echo "rm -rf ./iotivity-lite/port/windows/vs2015/x64/Debug/simpleserver_creds/*" >> reset.sh
+echo "rm -rf ./iotivity-lite/port/windows/vs2015/x64/Release/simpleserver_creds/*" >> reset.sh
 #echo "rm -rf ./iotivity-lite/port/linux/devicebuilderserver_creds/*" >> reset.sh
 
 #
