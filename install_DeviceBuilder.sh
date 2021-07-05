@@ -51,6 +51,8 @@ cp DeviceBuilder/DeviceBuilderInputFormat-file-examples/input-lightdevice.json e
 #
 echo "#!/bin/bash" > gen.sh
 echo "cd DeviceBuilder" >> gen.sh
+echo "# next line is for a generated MQTT server" >> gen.sh
+echo "#sh ./DeviceBuilder_mqtt_paho_python.sh ../example.json  ../device_output \"oic.d.light\" $1" >> gen.sh
 echo "sh ./DeviceBuilder_IotivityLiteServer.sh ../example.json  ../device_output \"oic.d.light\" $1" >> gen.sh
 echo "cd .." >> gen.sh
 echo "#" >> gen.sh
