@@ -34,6 +34,7 @@ The build enviroment is taylored to create OCF Server Devices.
     - [Generate PKI certificates and header files](#generate-pki-certificates-and-header-files)
   - [Adding your own Resource models](#adding-your-own-resource-models)
   - [Windows Specific Instructions](#windows-specific-instructions)
+  - [Issues](#Issues)
 
 ## Installation
 
@@ -314,3 +315,8 @@ Instructions to add your own Resource models are available [here](/IOTivity-Lite
 ## Windows Specific Instructions
 
 Windows specific instructions (using Visual Studio) are available [here](/IOTivity-Lite-setup/windows).
+
+## Issues
+
+Please execute the curl command in a folder hierarchy without blanks.
+Blanks in the folder name causes issues with going back and forth in the created folders.
