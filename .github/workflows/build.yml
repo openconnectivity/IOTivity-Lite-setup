@@ -34,7 +34,8 @@ jobs:
           ls 
           curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
           ls
-          # cd iotivity-lite
+          cd iot-lite
+          ls
           sh gen.sh
           sh build.sh
           
