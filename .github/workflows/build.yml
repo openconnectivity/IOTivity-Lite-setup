@@ -31,8 +31,10 @@ jobs:
         run: |
           mkdir master
           cd master
+          ls 
           curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
-          cd iotivity-lite
+          ls
+          # cd iotivity-lite
           sh gen.sh
           sh build.sh
           
