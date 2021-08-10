@@ -43,5 +43,9 @@ jobs:
           cp ./DeviceBuilder/DeviceBuilderInputFormat-file-examples/test/test_1.json input.json
           sh gen.sh
           sh build.sh
+          # build test_2
+          cp ./DeviceBuilder/DeviceBuilderInputFormat-file-examples/test/test_2.json input.json
+          sh gen.sh
+          sh build.sh
           
 
