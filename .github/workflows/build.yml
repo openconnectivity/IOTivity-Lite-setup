@@ -35,7 +35,12 @@ jobs:
           curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install-master.sh | bash
           ls
           cd iot-lite
+          # build the example
           ls
+          sh gen.sh
+          sh build.sh
+          # build test_1
+          cp ./DeviceBuilder/DeviceBuilderInputFormat-file-examples/test_1.json input.json
           sh gen.sh
           sh build.sh
           
