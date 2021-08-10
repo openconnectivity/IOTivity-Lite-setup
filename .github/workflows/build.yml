@@ -40,7 +40,7 @@ jobs:
           sh gen.sh
           sh build.sh
           # build test_1
-          cp ./DeviceBuilder/DeviceBuilderInputFormat-file-examples/test_1.json input.json
+          cp ./DeviceBuilder/DeviceBuilderInputFormat-file-examples/test/test_1.json input.json
           sh gen.sh
           sh build.sh
           
