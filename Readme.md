@@ -43,7 +43,8 @@ The local installation of the Tool Chain can be done with a single curl command:
 ```curl  https://openconnectivity.github.io/IOTivity-Lite-setup/install.sh | bash```
 
 The curl command sets up the Tool Chain on the (development) machine.
-The script installs various tools and github repositories that are needed to use the Tool Chain. For windows, visual studio is needed as an extra installation step, see [here](#windows-specific-instructions) for Windows Specific additional instructions.
+The script installs various tools and github repositories that are needed to use the Tool Chain. 
+For windows, visual studio is needed as an extra installation step, see [here](#windows-specific-instructions) for Windows Specific additional instructions.
 
 Executing the installation command requires:
 
