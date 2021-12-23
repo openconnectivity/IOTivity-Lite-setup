@@ -112,7 +112,7 @@ Note that a Windows (10) PC can be used to run OCFDeviceSpy as OCF Onboarding To
 | [DeviceBuilder](https://openconnectivityfoundation.github.io/DeviceBuilder/) | [DeviceBuilder](https://github.com/openconnectivityfoundation/DeviceBuilder) |  Tool Chain  |
 | [swagger2x](https://openconnectivityfoundation.github.io/swagger2x) | [swagger2x](https://github.com/openconnectivityfoundation/swagger2x) |  templated code generation   |
 | [IoTivity](https://iotivity.org)     | [IoTivity](https://github.com/iotivity/iotivity-lite)     |  OCF Secure IP Device Framework  |
-| [IOTdataModels](https://oneiota.org) | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) | website: [oneIOTa](https://oneiota.org)  |
+| [OTdataModels | [IOTdataModels](https://github.com/openconnectivityfoundation/IoTDataModels) | website: [IOTdataModels](https://openconnectivityfoundation.github.io/devicemodels/docs/index.html)  |
 | core        | [core](https://github.com/openconnectivityfoundation/core)        |  OCF core data models   |
 | [OCF clients](https://openconnectivityfoundation.github.io/development-support)          |[OCF clients](https://github.com/openconnectivityfoundation/development-support)          |  OCF development clients (prebuild) |
 
@@ -178,7 +178,7 @@ Things to check:
 - Make sure that if an UPDATE method is removed, also change the supported inteface (if)
 
 Information on available which device types should implement which resources can be found [here](https://openconnectivityfoundation.github.io/devicemodels/docs/index.html).
-Information on the individual resources in OAS2.0 format can be found in [oneIOTa](https://oneiota.org).
+Information on the individual resources in OAS2.0 format can be found in [here](https://github.com/openconnectivityfoundation/IoTDataModels).
 
 Recommendation:
 

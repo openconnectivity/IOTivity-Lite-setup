@@ -50,7 +50,7 @@ Folder structure after everything is installed and the code is generated:
         |                          |- SimpleServer.vcxproj    <--- project file
         |                          |- ...
         |                   
-        |-- IOTDataModels    oneIOTa resource definitions (in swagger format)
+        |-- IOTDataModels    OCF resource definitions (in swagger format)
         |-- IOTivity-Lite-setup   This github repo.
         |-- swagger2x        swagger2x code generation
         |- gen.sh            generation command to convert the example.json in to code
