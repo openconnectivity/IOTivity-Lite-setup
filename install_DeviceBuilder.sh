@@ -40,7 +40,7 @@ cd ..
 #
 # clone the repo of Device Builder
 #
-git clone https://github.com/openconnectivityfoundation/DeviceBuilder.git
+git clone https://github.com/ibraprog/DeviceBuilder.git
 #
 # get the initial example from the repo, and put it on the top level folder
 #

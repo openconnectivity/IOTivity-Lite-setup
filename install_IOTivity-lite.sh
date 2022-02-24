@@ -33,7 +33,7 @@ libexpat1-dev libglib2.0-dev libsqlite3-dev libcurl4-gnutls-dev
 #
 # step 2 : clone the code
 #
-git clone https://github.com/iotivity/iotivity-lite.git
+git clone https://github.com/ibraprog/iotivity-lite.git
 #
 # step 3: get the appropriate tag (if no tag supplied, it is the master)
 #
