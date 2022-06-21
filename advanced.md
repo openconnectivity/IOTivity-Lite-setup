@@ -68,4 +68,4 @@ delete the folder:
 
 - iotivity-lite\port\windows\vs2015\Debug\x64\simpleserver_creds
 
-see more [windows info here](IOTivity-Lite-setup/windows)
+see more [windows info here](/windows.md)
