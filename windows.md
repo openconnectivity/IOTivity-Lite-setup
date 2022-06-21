@@ -17,7 +17,7 @@ Explanation of how to use Visual Studio to build and run the generated applicati
 
 ## Installation
 
-Installation of IoTivity-Lite as indicated in the [main flow](/IOTivity-Lite-setup/).
+Installation of IoTivity-Lite as indicated in the [main flow](/Readme.md#development-flow).
 
 Folder structure after everything is installed and the code is generated:
 
@@ -110,7 +110,7 @@ The development flow is depicted the figure below:
 Based on visual studio community 2017, version 15.7.1
 
 The Initial flow is doing a generation (with the supplied example):
-1. [gen.sh](/IOTivity-Lite-setup#generate-code)
+1. [gen.sh](#generate-code)
 2. Start up visual code/studio with the IoTivity-Lite solution file (.sln)
    note dependend on the use version of studio/code solution conversion will take place.
 3. Retarget the solution, so that it actual builds

@@ -307,15 +307,15 @@ Script: **pki.sh**
 This script creates PKI based certificates and converts them into an header file.
 The generated certificates are **TEST** certificates, these certificates are to be used for testing only.
 
-See [here](/IOTivity-Lite-setup/security) for more info on security options.
+See [here](/security.md) for more info on security options.
 
 ## Adding your own Resource models
 
-Instructions to add your own Resource models are available [here](/IOTivity-Lite-setup//adding_my_own_models).
+Instructions to add your own Resource models are available [here](/adding_my_own_models.md).
 
 ## Windows Specific Instructions
 
-Windows specific instructions (using Visual Studio) are available [here](/IOTivity-Lite-setup/windows).
+Windows specific instructions (using Visual Studio) are available [here](/windows.md).
 
 ## Issues
 
